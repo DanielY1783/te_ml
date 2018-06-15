@@ -16,7 +16,7 @@ from sklearn.model_selection import cross_val_score, cross_val_predict, train_te
 
 # Class constants
 DATE = "2018_06_15/" 
-DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/bin/" # Root directory
+DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory
 LOC = "accre/" # local or accre cluster
 DATA_FILE = "test.tsv" # Name of data file to process
 CHROMOSOME = 0 # Column for the chromosome number of transposable element
