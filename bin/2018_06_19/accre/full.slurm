@@ -8,4 +8,4 @@
 #SBATCH --output=/dors/capra_lab/users/yand1/te_ml/results/2018_06_15/accre/output.txt
 
 module load Anaconda3
-python random_forest_test.py
+python random_forest.py
