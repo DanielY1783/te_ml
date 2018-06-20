@@ -22,15 +22,15 @@ from sklearn.model_selection import GridSearchCV, train_test_split # Cross valid
 DATE = "2018_06_20/" 
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory
 LOC = "accre/" # local or accre cluster
-TYPE = "svc_grid_search/" # Type of model
-DATA_FILE = "full.tsv" # Name of data file to process
+TYPE = "svc_grid_search_test/" # Type of model
+DATA_FILE = "test.tsv" # Name of data file to process
 CHROMOSOME = 0 # Column for the chromosome number of transposable element
 START = 1 # Column for the start location of transposable element
 END = 2 # Column for the end location of transposable element
 TF = 8 # Column for the transcription factor intersecting with transposable element
 ENHANCER = 13 # Column for if enhancer is present. 1 means enhancer is present
 CROSS_VAL = 5 # Number of subdivisions of data for cross validation
-RAM = 800000 # Size of RAM for process in MB
+RAM = 100000 # Size of RAM for process in MB
 
 
 # In[ ]:
