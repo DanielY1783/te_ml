@@ -21,7 +21,7 @@ from imblearn import over_sampling # Oversampling
 
 
 # Class constants
-DATE = "2018_06_19/" 
+DATE = "2018_06_20/" 
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory
 LOC = "accre/" # local or accre cluster
 TYPE = "rf_oversampled/" # Type of model
@@ -96,10 +96,10 @@ def create_predictions(model, x_df, y_df):
     x_resampled, y_resampled = oversampling.fit_sample(x_train_df, y_train_df)
     
     # Train the model on the oversampled training data
-    rfc.fit(x_resampled, y_resampled)
+    model.fit(x_resampled, y_resampled)
     
     # Use model to predict the testing set
-    y_pred_df = rfc.predict(x_test_df)
+    y_pred_df = model.predict(x_test_df)
     
     # Create a confusion matrix and write to file.
     cm_df = pd.DataFrame(metrics.confusion_matrix(y_test_df, y_pred_df), index = ["actual_negative", "actual_positive"]
@@ -133,7 +133,7 @@ x_df = te_new_df.iloc[:,3:end_index]
 y_df = te_new_df.iloc[:,end_index]
 
 # Create a random forest classifier model
-rfc = RandomForestClassifier(n_estimators = 10, n_jobs = -1)
+rfc = RandomForestClassifier(n_estimators = 100, n_jobs = -1)
 
 # Create predictions with random forests model
 create_predictions(model = rfc, x_df = x_df, y_df = y_df)
