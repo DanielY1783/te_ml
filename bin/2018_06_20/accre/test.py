@@ -30,7 +30,7 @@ END = 2 # Column for the end location of transposable element
 TF = 8 # Column for the transcription factor intersecting with transposable element
 ENHANCER = 13 # Column for if enhancer is present. 1 means enhancer is present
 CROSS_VAL = 5 # Number of subdivisions of data for cross validation
-RAM = 800000 # Size of RAM for process in MB
+RAM = 400000 # Size of RAM for process in MB
 
 
 # In[ ]:
