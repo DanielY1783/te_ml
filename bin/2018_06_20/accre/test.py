@@ -23,14 +23,14 @@ DATE = "2018_06_20/"
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory
 LOC = "accre/" # local or accre cluster
 TYPE = "svc_grid_search_test/" # Type of model
-DATA_FILE = "test.tsv" # Name of data file to process
+DATA_FILE = "test2.tsv" # Name of data file to process
 CHROMOSOME = 0 # Column for the chromosome number of transposable element
 START = 1 # Column for the start location of transposable element
 END = 2 # Column for the end location of transposable element
 TF = 8 # Column for the transcription factor intersecting with transposable element
 ENHANCER = 13 # Column for if enhancer is present. 1 means enhancer is present
 CROSS_VAL = 5 # Number of subdivisions of data for cross validation
-RAM = 100000 # Size of RAM for process in MB
+RAM = 800000 # Size of RAM for process in MB
 
 
 # In[ ]:
