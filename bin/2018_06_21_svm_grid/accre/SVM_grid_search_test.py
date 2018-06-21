@@ -22,7 +22,7 @@ from sklearn.model_selection import GridSearchCV, train_test_split # Cross valid
 DATE = "2018_06_21_svm_grid/" 
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory
 LOC = "accre/" # local or accre cluster
-TYPE = "svc_grid_search/" # Type of model
+TYPE = "svc_grid_search_test/" # Type of model
 DATA_FILE = "test2.tsv" # Name of data file to process
 CHROMOSOME = 0 # Column for the chromosome number of transposable element
 START = 1 # Column for the start location of transposable element
