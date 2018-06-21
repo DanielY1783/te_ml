@@ -29,8 +29,7 @@ START = 1 # Column for the start location of transposable element
 END = 2 # Column for the end location of transposable element
 TF = 8 # Column for the transcription factor intersecting with transposable element
 ENHANCER = 13 # Column for if enhancer is present. 1 means enhancer is present
-CROSS_VAL = 5 # Number of subdivisions of data for cross validation
-RAM = 1000 # MB for each SVC model.
+CROSS_VAL = 5 # Number of subdivisions of data for cross validation.
 
 
 # In[ ]:
@@ -126,7 +125,7 @@ x_train, x_test, y_train, y_test = train_test_split(x_df, y_df)
 
 # Perform a grid search to find the best parameters
 parameters = {"kernel": ["poly", "rbf", "sigmoid"], "C": [0.01, 0.1, 1, 10, 100, 1000]}
-model = GridSearchCV(SVC(cache_size = RAM), param_grid = parameters, n_jobs = -1, scoring = "f1_macro", cv = CROSS_VAL)
+model = GridSearchCV(SVC(), param_grid = parameters, n_jobs = -1, scoring = "f1_macro", cv = CROSS_VAL)
 model.fit(x_train, y_train)
 
 # Print out the best parameters from the grid search.
