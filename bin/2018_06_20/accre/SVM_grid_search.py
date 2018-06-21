@@ -125,8 +125,8 @@ y_df = te_new_df.iloc[:,end_index]
 x_train, x_test, y_train, y_test = train_test_split(x_df, y_df)
 
 # Perform a grid search to find the best parameters
-parameters = {"kernel": ["poly", "rbf", "sigmoid"], "C": [0.01, 0.1, 1, 10, 100, 1000], "gamma": [0.000000001, "auto", 0.0000001, 0.00001, 0.001, 0.1]}
-model = GridSearchCV(SVC(cache_size = RAM), param_grid = parameters, n_jobs = -1, scoring = "f1_macro", cv = CROSS_VAL)
+parameters = {"kernel": ["poly", "rbf", "sigmoid"], "C": [0.01, 0.1, 1, 10, 100, 1000]}
+model = GridSearchCV(SVC(), param_grid = parameters, n_jobs = -1, scoring = "f1_macro", cv = CROSS_VAL)
 model.fit(x_train, y_train)
 
 # Print out the best parameters from the grid search.

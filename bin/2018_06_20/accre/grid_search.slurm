@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --mail-user=daniel.yan@vanderbilt.edu
 #SBATCH --mail-type=ALL
-#SBATCH --nodes=4
+#SBATCH --nodes=8
 #SBATCH --ntasks=4
 #SBATCH --mem=128G
 #SBATCH --time=2:30:00
