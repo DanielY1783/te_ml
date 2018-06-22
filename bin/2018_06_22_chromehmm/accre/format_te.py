@@ -79,11 +79,6 @@ for line in data_file:
     write_file.write(str(te_end_int) + '\t')
     # Print the name of the transposable element to column 7 of new file (last column)
     write_file.write(values_list[TE_NAME_OLD] + '\n')
-
-    # Debug  
-    count += 1
-    if count > 1000:
-        break
     
 # Close the files
 data_file.close()
