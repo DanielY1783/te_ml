@@ -16,7 +16,7 @@ import re # For string splitting
 
 # Class constants
 DATE = "2018_06_22_chromehmm/" 
-DIRECTORY = "/dors/capra_lab/users/yand1/te_ml" # Root directory
+DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory
 DATA_FILE = "all_TE_fimo_out.txt" # Name of data file to process
 TF_NAME_OLD = 0 # Column of transcription factor name in the old file
 TE_NAME_OLD = 1 # Column of transposable element in the old file
