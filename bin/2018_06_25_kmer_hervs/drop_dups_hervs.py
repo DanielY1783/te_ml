@@ -41,5 +41,5 @@ new_herv_df["end"] = herv_df.iloc[:,END]
 no_dups_df = new_herv_df.drop_duplicates()
 
 # Save to file
-no_dups_df.to_csv(DIRECTORY + "data/" + DATE + WRITE_FILE)
+no_dups_df.to_csv(DIRECTORY + "data/" + DATE + WRITE_FILE, sep = '\t')
 
