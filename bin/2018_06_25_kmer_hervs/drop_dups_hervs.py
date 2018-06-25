@@ -33,9 +33,9 @@ HERV = 3 # Column for the transposable element of class HERV/ERV
 ## Main
 herv_df = pd.read_table((DIRECTORY + "data/" + DATE + DATA_FILE), header = None) # Old data frame
 new_herv_df = pd.DataFrame(columns = ["chr", "start", "end", "herv"])
-new_herv_df["chr"] = te_df.iloc[:,CHROMOSOME]
-new_herv_df["start"] = te_df.iloc[:,START]
-new_herv_df["end"] = te_df.iloc[:,END]
+new_herv_df["chr"] = herv_df.iloc[:,CHROMOSOME]
+new_herv_df["start"] = herv_df.iloc[:,START]
+new_herv_df["end"] = herv_df.iloc[:,END]
 
 # Delete repeats from the data frame.
 no_dups_df = new_herv_df.drop_duplicates()
