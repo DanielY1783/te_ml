@@ -17,7 +17,7 @@ import pandas as pd
 
 
 # Class constants
-DATE = "2018_06_26_kmers_hervs_reformat/" 
+DATE = "2018_06_25_kmers_hervs/" 
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory
 DATA_FILE = "full_hervs.tsv" # Name of data file to process
 WRITE_FILE = "no_dups_hervs.tsv" # Name of file to write to
@@ -31,23 +31,15 @@ HERV = 3 # Column for the transposable element of class HERV/ERV
 
 
 ## Main
-def main:
-    herv_df = pd.read_table((DIRECTORY + "data/" + "2018_06_25_kmers_hervs/"  + DATA_FILE), header = None) # Old data frame
-    new_herv_df = pd.DataFrame(columns = ["chr", "start", "end", "herv"])
-    new_herv_df["chr"] = herv_df.iloc[:,CHROMOSOME]
-    new_herv_df["start"] = herv_df.iloc[:,START]
-    new_herv_df["end"] = herv_df.iloc[:,END]
-    new_herv_df["herv"] = herv_df.iloc[:,HERV]
+herv_df = pd.read_table((DIRECTORY + "data/" + DATE + DATA_FILE), header = None) # Old data frame
+new_herv_df = pd.DataFrame(columns = ["chr", "start", "end", "herv"])
+new_herv_df["chr"] = herv_df.iloc[:,CHROMOSOME]
+new_herv_df["start"] = herv_df.iloc[:,START]
+new_herv_df["end"] = herv_df.iloc[:,END]
 
-    # Delete repeats from the data frame.
-    no_dups_df = new_herv_df.drop_duplicates()
+# Delete repeats from the data frame.
+no_dups_df = new_herv_df.drop_duplicates()
 
-    # Save to file
-    no_dups_df.to_csv(DIRECTORY + "data/" + DATE + WRITE_FILE, sep = '\t', index = False)
-
-
-# In[ ]:
-
-
-main()
+# Save to file
+no_dups_df.to_csv(DIRECTORY + "data/" + DATE + WRITE_FILE, sep = '\t')
 

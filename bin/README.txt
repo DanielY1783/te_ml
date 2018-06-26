@@ -26,3 +26,6 @@
 2018_06_25_chromehmm_ml_input: Reformat intersection of tranposable elements with chromehmmm
 		enhancers to form input data for machine learning model.
 		
+2018_06_25_kmer_hervs: Reformat hervs data to drop transcription factors and duplicate hervs. 
+
+2018_06_26_kmer_hervs_chromehmm: Fixed version of 2018_06_25_kmer_hervs
