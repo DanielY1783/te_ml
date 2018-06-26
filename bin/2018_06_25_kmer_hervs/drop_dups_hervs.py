@@ -17,7 +17,7 @@ import pandas as pd
 
 
 # Class constants
-DATE = "2018_06_26_kmers_hervs_reformat/" 
+DATE = "2018_06_26_kmers_hervs_chromehmm/" 
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory
 DATA_FILE = "full_hervs.tsv" # Name of data file to process
 WRITE_FILE = "no_dups_hervs.tsv" # Name of file to write to
