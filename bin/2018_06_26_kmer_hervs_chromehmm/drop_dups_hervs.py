@@ -31,7 +31,7 @@ HERV = 3 # Column for the transposable element of class HERV/ERV
 
 
 ## Main
-def main:
+def main():
     herv_df = pd.read_table((DIRECTORY + "data/" + "2018_06_25_kmers_hervs/"  + DATA_FILE), header = None) # Old data frame
     new_herv_df = pd.DataFrame(columns = ["chr", "start", "end", "herv"])
     new_herv_df["chr"] = herv_df.iloc[:,CHROMOSOME]
