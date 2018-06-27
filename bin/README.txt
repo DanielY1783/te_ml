@@ -29,3 +29,6 @@
 2018_06_25_kmer_hervs: Reformat hervs data to drop transcription factors and duplicate hervs. 
 
 2018_06_26_kmer_hervs_chromehmm: Fixed version of 2018_06_25_kmer_hervs
+
+2018_06_27_kmer_hervs_chromehmm: kmer counter that creates a feature matrix of 6-mer counts from
+		the data at /dors/capra_lab/users/yand1/te_ml/data/2018_06_26_kmers_hervs_chromehmm/hervs_hg19.tsv
