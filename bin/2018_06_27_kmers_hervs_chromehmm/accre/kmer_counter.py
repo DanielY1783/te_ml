@@ -68,9 +68,6 @@ def count_kmers(pairs_df, kmers_list):
                                                       fill_value = 0)
     features_df = features_df.drop("pairs", axis = "columns")
     
-    # Counter for tracking row on features_df
-    #counter = 0
-    
     # Iterate over pairs_df to update features_df
     for index, row in pairs_df.iterrows():
         # Get base pairs in current row
@@ -83,9 +80,6 @@ def count_kmers(pairs_df, kmers_list):
             column_number = features_df.columns.get_loc(kmer)
             # Update features matrix
             features_df.iloc[index, column_number] += 1
-            
-        # Increment counter
-        #counter += 1
     
     return features_df
 
