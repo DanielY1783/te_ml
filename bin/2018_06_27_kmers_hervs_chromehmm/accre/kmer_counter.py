@@ -63,8 +63,7 @@ def main():
     hervs_df = pd.read_table(DIRECTORY + "data/" + "2018_06_26_kmers_hervs_chromehmm/" + DATA_FILE, header = None)
     
     # Rename columns
-    hervs_df = hervs_df.rename(mapper = {CHR:"chr", START:"start", END:"end", PAIRS: "pairs"},
-                               axis = "columns")
+    hervs_df = hervs_df.rename(columns = {CHR: "chr", START: "start", END: "end", PAIRS: "pairs"})
     
     # Generate all possible k-mers
     kmers_list = generate_kmers()
