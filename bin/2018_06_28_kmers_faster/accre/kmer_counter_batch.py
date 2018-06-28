@@ -21,7 +21,7 @@ import sys # For getting name of data file as command line argument
 
 
 # Class constants
-DIRECTORY = "../../../" # Root directory for project
+DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory for project
 K = 6 # Length of "k" value for k-mer
 CHR = 0 # Column of chromosome of herv in data file
 START = 1 # Column of start location of herv in data file
