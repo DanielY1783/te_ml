@@ -76,10 +76,12 @@ def count_kmers(pairs_df, kmers_list):
         # Find k-mers in base pairs using a sliding window and update count in features matrix
         for i in range(len(pairs) - K):
             kmer = pairs[i: i + K]
-            # Get corresponding column number in features matrix
-            column_number = features_df.columns.get_loc(kmer)
-            # Update features matrix
-            features_df.iloc[index, column_number] += 1
+            # Check that the column exists
+            if kmer in features_df.columns:
+                # Get corresponding column number in features matrix
+                column_number = features_df.columns.get_loc(kmer)
+                # Update features matrix
+                features_df.iloc[index, column_number] += 1
     
     return features_df
 
