@@ -11,3 +11,8 @@ into smaller files, with the number of the file appended before .tsv
 (for example, hervs_hg19_1.tsv)
 New data files are saved to:
 /dors/capra_lab/users/yand1/te_ml/data/2018_06_28_kmers_faster/batch_input
+
+test_kmer_counter_batch.slurm submits a test job to the accre cluster.
+
+kmer_counter_batch.slurm uses a job array to submit the 100 separate jobs on creating feature matrices from split data
+to the accre cluster.
