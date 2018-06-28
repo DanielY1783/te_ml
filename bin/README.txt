@@ -32,3 +32,6 @@
 
 2018_06_27_kmer_hervs_chromehmm: kmer counter that creates a feature matrix of 6-mer counts from
 		the data at /dors/capra_lab/users/yand1/te_ml/data/2018_06_26_kmers_hervs_chromehmm/hervs_hg19.tsv
+		
+2018_06_28_kmers_faster: Faster implementation of kmer counter from 2018_06_27_kmer_hervs_chromehmm
+		that works better with pandas dataframes.
