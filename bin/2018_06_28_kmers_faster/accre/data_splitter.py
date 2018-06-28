@@ -40,7 +40,7 @@ def main():
         temp_df = hervs_df.loc[start_row:end_row,]
         # Save to file
         temp_df.to_csv(DIRECTORY + "data/" + DATE + "/batch_input/hervs_hg19_" + str(i) + ".tsv", 
-                       sep = '\t', index = False)
+                       sep = '\t', index = False, header = False)
 
 
 # In[4]:

@@ -115,7 +115,7 @@ def main():
     features_df = count_kmers(features_df = features_df)
     
     features_df.to_csv(DIRECTORY + "data/2018_06_28_kmers_faster/batch_output/" + write_file, 
-                       sep = '\t', index = False)
+                       sep = '\t', index = False, header = False)
 
 
 # In[7]:
