@@ -1,8 +1,9 @@
-kmer_counter_batch counts the number of each 6-mer within each HERV at
-/dors/capra_lab/users/yand1/te_ml/data/2018_06_26_kmers_hervs_chromehmm/hervs_hg19.tsv
-and is designed for use with slurm batch arrays for faster parallel processing.
+kmer_counter_batch Counts k-mers for each herv by reading command line argument with file name with 
+base pairs for HERVs and creating a count for each k-mer and saving to 
+/dors/capra_lab/users/yand1/te_ml/data/2018_06_28_kmers_faster/batch_output
+This version is a local version for testing of a full version on accre for batch array processing 
+of data to create a feature matrix.
 
-data_splitter splits the HERV data at /dors/capra_lab/users/yand1/te_ml/data/2018_06_26_kmers_hervs_chromehmm/hervs_hg19.tsv 
-into smaller files, with the number of the file appended before .tsv
-(for example, hervs_hg19_1.tsv)
-Smaller files are saved to /dors/capra_lab/users/yand1/te_ml/data/2018_06_28_kmers_faster/batch_input
+data_splitter splits the HERV data at 
+/dors/capra_lab/users/yand1/te_ml/data/2018_06_26_kmers_hervs_chromehmm/hervs_hg19.tsv 
+into smaller files. This is a local version for testing.
