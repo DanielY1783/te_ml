@@ -33,7 +33,7 @@ def main():
         for i in range(len(features_df.columns)):
             file.write("Column " + str(i) + ": " + features_df.columns[i])
         
-    
+    # Store data frame to file
     features_df.to_csv(DIRECTORY + "data/2018_06_29_kmers_enhancers_intersect/no_header_hervs_kmers_features_matrix.tsv"
                       , index = False, header = False)
     
