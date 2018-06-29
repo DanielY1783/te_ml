@@ -39,7 +39,7 @@ def main():
     
     # Get count of number of overlaps and save to file.
     overlaps = features_df.iloc[CHR_INTERSECT].sum()
-    with open(DIRECTORY + "results/" + DATE_INFO + "count_overlaps.txt", w+) as file:
+    with open(DIRECTORY + "results/" + DATE_INFO + "count_overlaps.txt", mode = "w+") as file:
         file.write("Overlaps: " + str(overlaps) + '\n')
         file.write("No overlaps: " + str(features_df.shape[0] - overlaps) + '\n')
     
