@@ -13,6 +13,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib
+import matplotlib.pyplot as plt
 
 
 # In[2]:
@@ -35,12 +36,12 @@ def plot_histogram(dist):
         dist(pd.Series): Distribution of kmer counts to plot
     """
     matplotlib.use("Agg") # Avoid display error
-    matplotlib.pyplot.figure() # Create plot
-    matplotlib.pyplot.hist(dist) # Send distribution of kmers to histogram
-    matplotlib.pyplot.xlabel("Repetitions 6-mers within HERVs")
-    matplotlib.pyplot.ylabel("Number of 6-mers")
-    matplotlib.pyplot.title("6-mer counts within HERVs")
-    matplotlib.pyplot.savefig(DIRECTORY + "results/" + DATE + WRITE_FILE)
+    plt.figure() # Create plot
+    plt.hist(dist) # Send distribution of kmers to histogram
+    plt.xlabel("Repetitions 6-mers within HERVs")
+    plt.ylabel("Number of 6-mers")
+    plt.title("6-mer counts within HERVs")
+    plt.savefig(DIRECTORY + "results/" + DATE + WRITE_FILE)
 
 
 # In[ ]:
