@@ -35,3 +35,6 @@
 		
 2018_06_28_kmers_faster: Faster implementation of kmer counter from 2018_06_27_kmer_hervs_chromehmm
 		that works better with pandas dataframes.
+		
+2018_06_29_kmers_enhancer_intersect: Reformatting scripts for features matrix of kmers for hervs.
+		PCA and histogram analysis on features matrix after intersection with chromehmm enhancers.
