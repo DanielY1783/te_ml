@@ -29,7 +29,7 @@ def main():
     features_df = pd.read_table(DIRECTORY + "data/2018_06_29_kmers_enhancers_intersect/hervs_kmers_features_matrix.tsv")
     
     # Store header names to file.
-    with open(DIRECTORY + "data/2018_06_29_kmers_enhancers_intersect/header_names.txt", a) as file:
+    with open(DIRECTORY + "data/2018_06_29_kmers_enhancers_intersect/header_names.txt", mode = "a") as file:
         for i in range(len(features_df.columns)):
             features_df.write("Column " + str(i) + ": " + features_df.columns[i])
         
