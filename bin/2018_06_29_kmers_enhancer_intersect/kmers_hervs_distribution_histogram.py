@@ -46,7 +46,6 @@ def plot_histogram(dist):
 # In[ ]:
 
 
-## Main
 def main():
     """Main function
     """
