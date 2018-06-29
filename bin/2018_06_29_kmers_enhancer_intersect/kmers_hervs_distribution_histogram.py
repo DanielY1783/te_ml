@@ -36,8 +36,8 @@ def plot_histogram(dist):
     Args:
         dist(pd.Series): Distribution of kmer counts to plot
     """
-    plt.figure(figsize = (80, 60)) # Create plot
-    plt.hist(dist, bins = 6000) # Send distribution of kmers to histogram
+    plt.figure(figsize = (40, 30)) # Create plot
+    plt.hist(dist, bins = 10000) # Send distribution of kmers to histogram
     plt.xlabel("Repetitions 6-mers within HERVs")
     plt.ylabel("Number of 6-mers")
     plt.title("6-mer counts within HERVs")
