@@ -18,8 +18,8 @@ import pandas as pd
 # Class constants
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/"
 DATE_INFO = "2018_06_29_kmers_enhancers_intersect/"
-DATA_FILE = "hervs_kmers_intersect_enhancers.tsv"
-REFORMATTED_DATA_FILE = "reformatted_hervs_kmers_intersect_enhancers.tsv" # New data file to write to
+DATA_FILE = "test.tsv"
+REFORMATTED_DATA_FILE = "reformatted_test.tsv" # New data file to write to
 COLUMN_NAMES_FILE = "header_names.txt" # File with column names
 CHR_INTERSECT= 4099 # Column of chromosome of intersection
 START_INTERSECT = 4100 # Column of start location of intersection
