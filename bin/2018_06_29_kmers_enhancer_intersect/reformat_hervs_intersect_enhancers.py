@@ -58,7 +58,7 @@ def main():
         
         # Get the column name using split
         for line in lines_list:
-            column_names.append(lines_list.split(' ')[1])
+            column_names.append(lines.split(' ')[1])
             
         # Add in enhancer overlap as column name
         column_names.append("enhancer")
