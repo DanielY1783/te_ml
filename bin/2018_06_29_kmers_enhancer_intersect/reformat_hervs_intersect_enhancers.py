@@ -36,7 +36,6 @@ def main():
     # Read in data frame
     features_df = pd.read_table(DIRECTORY + "data/" + DATE_INFO + DATA_FILE, header = None)
     
-    
     # Change 1 for overlap, -1 for no overlap
     features_df.iloc[CHR_INTERSECT] = (features_df.iloc[CHR_INTERSECT].apply
                                          (lambda x: 0 if x == "." else 1))
@@ -52,10 +51,15 @@ def main():
     
     # Rename columns using file with column names.
     with open(DIRECTORY + "data/" + DATE_INFO + COLUMN_NAMES_FILE, mode = "r") as file:
+        # Read in file
         lines_list = file.readlines()
+        # List to store column names
+        column_names = []
+        
         # Get the column name using split
         for line in lines_list:
             column_names.append(lines_list.split(' ')[1])
+            
         # Add in enhancer overlap as column name
         column_names.append("enhancer")
         # Rename columns
