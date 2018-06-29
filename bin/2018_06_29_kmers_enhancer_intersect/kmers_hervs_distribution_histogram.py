@@ -13,6 +13,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib
+matplotlib.use("Agg") # Avoid display error
 import matplotlib.pyplot as plt
 
 
@@ -35,7 +36,6 @@ def plot_histogram(dist):
     Args:
         dist(pd.Series): Distribution of kmer counts to plot
     """
-    matplotlib.use("Agg") # Avoid display error
     plt.figure() # Create plot
     plt.hist(dist) # Send distribution of kmers to histogram
     plt.xlabel("Repetitions 6-mers within HERVs")
