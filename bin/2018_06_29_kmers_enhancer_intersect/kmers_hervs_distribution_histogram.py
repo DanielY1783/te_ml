@@ -56,7 +56,7 @@ def main():
     features_df.drop(["chr", "start", "end"], axis = "columns", inplace = True)
     
     # Get the sum of each column of kmers
-    kmers_sum = features_df.sum(axis = "columns")
+    kmers_sum = features_df.sum(axis = "columns").values
     
     # Plot the histogram
     plot_histogram(kmers_sum)
