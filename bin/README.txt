@@ -39,6 +39,7 @@
 2018_06_29_kmers_enhancer_intersect: Reformatting scripts for features matrix of kmers for hervs.
 		PCA and histogram analysis on features matrix after intersection with chromehmm enhancers.
 		
-2018_07_02_kmers_pca_rf: Principal component analysis and random forest classifier run on 
+2018_07_02_kmers_pca_rf: Principal component analysis, random forest classifier, gradient
+boosting classifier, and support vector classifier run on 
 /dors/capra_lab/users/yand1/te_ml/data/2018_06_29_kmers_enhancers_intersect/reformatted_hervs_kmers_intersect_enhancers.tsv
 
