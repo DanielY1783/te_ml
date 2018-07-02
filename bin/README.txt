@@ -38,3 +38,5 @@
 		
 2018_06_29_kmers_enhancer_intersect: Reformatting scripts for features matrix of kmers for hervs.
 		PCA and histogram analysis on features matrix after intersection with chromehmm enhancers.
+		
+2018_07_02_kmers_pca_rf: Primary component analysis and random forest classifier run 
