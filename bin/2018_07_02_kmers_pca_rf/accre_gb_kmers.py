@@ -91,7 +91,7 @@ def main():
     y_df = features_df.loc[:,ENHANCER_OVERLAP]
     
     # Create a gradient boosting classifier model.
-    gbc = GradientBoostingClassifier
+    gbc = GradientBoostingClassifier()
     
     # Test random forest model using cross validation.
     cross_validate(model = gbc, x = x_df, y = y_df)
