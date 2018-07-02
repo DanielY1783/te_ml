@@ -5,7 +5,7 @@ library("factoextra")
 
 # Class constants
 DIRECTORY <- "/dors/capra_lab/users/yand1/te_ml/"
-DATA_FILE <- "reformatted_hervs_kmers_enhancers_intersect.tsv"
+DATA_FILE <- "reformatted_hervs_kmers_intersect_enhancers.tsv"
 ENHANCER <- 4099 # Column showing enhancer overlap
 CHROMOSOME <- 0 # Column of chromosome of HERV
 START <- 1 # Column of start location of HERV
