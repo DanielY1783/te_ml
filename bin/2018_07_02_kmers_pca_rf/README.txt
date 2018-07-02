@@ -12,3 +12,9 @@ accre_rf_kmers.ipynb is an accre version of a random forest model run on the ful
 accre_rf_kmers.py is converted to a .py file to make it easier to run on accre.
 
 accre_rf_kmers.slurm submits accre_rf_kmers.py to the accre scheduler
+
+accre_gb_kmers files are the same as accre_rf_kmers files, but run a gradient boosting classifier
+instead of a random forrest classifier.
+
+accre_svc_kmers files are the same as accre_rf_kmers files, but run a support classifier
+instead of a random forrest classifier.
