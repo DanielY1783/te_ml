@@ -12,3 +12,10 @@ by taking in a command line argument and counting kmers, normalizing counts, and
 /dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/batch_output
 
 kmer_counter_batch.slurm submits kmer_counter_batch.py to the accre scheduler in a job array to parallelize things
+
+data_combiner combines the different outputs from kmer_counter_batch.slurm in
+/dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/batch_output
+to a combined file at
+/dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/combined_features_matrix.ts
+
+pca_combined.R creates a pca from the features matrix outputted by data_combiner
