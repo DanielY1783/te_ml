@@ -54,8 +54,8 @@ def combine(file_list, header, output_file, axis, sep ='\t', index = False):
 if __name__ == "__main__":
     file_list = []
     for i in range(5):
-        file_list.append("/dors/capra_lab/users/yand1/te_ml/data/2018_06_28_kmers_faster/batch_output/hervs_hg19_{}_features_matrix.tsv".format(i))
+        file_list.append("/dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/batch_output/combined_hg19_{}_features_matrix.tsv".format(i))
     combine(file_list = file_list, header = False, 
-            output_file = "/dors/capra_lab/users/yand1/te_ml/results/2018_07_03_pca_te_enhancers/test.tsv",
+            output_file = "/dors/capra_lab/users/yand1/te_ml/results/2018_07_03_pca_te_enhancers/combined_features_matrix.tsv",
             axis = "columns")
 
