@@ -44,7 +44,7 @@ def cross_validate(model, x, y):
     
     # Print the cross validation scores to a file.
     cvs_df = pd.DataFrame(data = cvs, columns = ["f1 score"])
-    cvs_df.to_csv((DIRECTORY + "results/" + DATE_DIR + "rf_cross_val_scores.csv"), 
+    cvs_df.to_csv((DIRECTORY + "results/" + DATE_DIR + "svc_cross_val_scores.csv"), 
                   sep = '\t', index = False)
 
 
@@ -71,10 +71,10 @@ def predictions(model, x, y):
     # Create a confusion matrix and write to file.
     cm_df = pd.DataFrame(metrics.confusion_matrix(y_test, y_pred), index = ["actual_negative", "actual_positive"]
                     , columns = ["predicted_negative", "predicted_positive"])
-    cm_df.to_csv((DIRECTORY + "results/" + DATE_DIR + "rf_confusion_matrix.tsv"), sep = '\t')
+    cm_df.to_csv((DIRECTORY + "results/" + DATE_DIR + "svc_confusion_matrix.tsv"), sep = '\t')
     
     # Create a file to store metrics.
-    with open((DIRECTORY + "results/" + DATE_DIR + "rf_metrics.txt"), "w+") as metrics_file:
+    with open((DIRECTORY + "results/" + DATE_DIR + "svc_metrics.txt"), "w+") as metrics_file:
         metrics_file.write(metrics.classification_report(y_test, y_pred))
 
 
