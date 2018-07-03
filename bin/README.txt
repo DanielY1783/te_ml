@@ -40,6 +40,8 @@
 		PCA and histogram analysis on features matrix after intersection with chromehmm enhancers.
 		
 2018_07_02_kmers_pca_rf: Principal component analysis, random forest classifier, gradient
-boosting classifier, and support vector classifier run on 
-/dors/capra_lab/users/yand1/te_ml/data/2018_06_29_kmers_enhancers_intersect/reformatted_hervs_kmers_intersect_enhancers.tsv
+		boosting classifier, and support vector classifier run on 	/dors/capra_lab/users/yand1/te_ml/data/2018_06_29_kmers_enhancers_intersect/reformatted_hervs_kmers_intersect_enhancers.tsv
 
+2018_07_03_pca_te_enhancers: Principal component analysis on kmers from transposable 
+	elements only, intersection of tranposable elements and enhancers, and enhancers only. Uses chromhmm
+			
