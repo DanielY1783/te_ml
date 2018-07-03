@@ -141,10 +141,10 @@ def main():
     features_df = count_kmers(features_df = features_df)
     
     # Normalize counts by dividing kmer counts in each row by the number of bases
-    features_df = features_df.apply(normalize_rows, axis = "columns")
+    features_df = features_df.apply(normalize_row, axis = "columns")
     
     # Save to file
-    features_df.to_csv(DIRECTORY + "data/2018_06_28_kmers_faster/batch_output/" + write_file, 
+    features_df.to_csv(DIRECTORY + "data/2018_07_03_pca_te_enhancers/batch_output/" + write_file, 
                        sep = '\t', index = False)
 
 
