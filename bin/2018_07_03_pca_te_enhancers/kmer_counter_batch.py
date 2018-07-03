@@ -78,7 +78,7 @@ def parse_pairs(row):
         row(pd.Series): Row that is updated with count of each k-mer within the HERV.
     """
     # Get base pairs in current row
-    pairs = row[PAIRS]
+    pairs = row[PAIRS].lower()
     # Find k-mers in base pairs using a sliding window and update count in features matrix
     for i in range(len(pairs) - K):
         kmer = pairs[i: i + K]
@@ -123,7 +123,11 @@ def main():
     
     # Read in file as pandas dataframe
     hervs_df = pd.read_table(DIRECTORY + "data/2018_07_03_pca_te_enhancers/batch_input/" +
-                             data_file)
+                             data_file, header = None)
+    
+    # Rename columns
+    hervs_df = hervs_df.rename(columns = {CHR: "chr", START: "start", END: "end",
+                                          LABEL: "label", PAIRS: "pairs"})
     
     # Generate all possible k-mers
     kmers_list = generate_kmers()
