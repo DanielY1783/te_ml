@@ -125,10 +125,6 @@ def main():
     hervs_df = pd.read_table(DIRECTORY + "data/2018_07_03_pca_te_enhancers/batch_input/" +
                              data_file)
     
-    # Rename columns
-    hervs_df = hervs_df.rename(columns = {CHR: "chr", START: "start", END: "end",
-                                          LABEL: "label", PAIRS: "pairs"})
-    
     # Generate all possible k-mers
     kmers_list = generate_kmers()
                                           
