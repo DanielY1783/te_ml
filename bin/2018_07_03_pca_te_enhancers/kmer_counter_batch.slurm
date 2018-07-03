@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --mem=32G
-#SBATCH --time=30:00
+#SBATCH --time=150:00
 #SBATCH --array=0-99
 #SBATCH --output=/dors/capra_lab/users/yand1/te_ml/results/2018_07_03_pca_te_enhancers/kmer_counter/output_%a.txt
 
