@@ -11,4 +11,4 @@ This one processes data at:
 by taking in a command line argument and counting kmers, normalizing counts, and saving to
 /dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/batch_output
 
-kmer_counter.slurm submits kmer_counter_batch.py to the accre scheduler in a job array to parallelize things
+kmer_counter_batch.slurm submits kmer_counter_batch.py to the accre scheduler in a job array to parallelize things
