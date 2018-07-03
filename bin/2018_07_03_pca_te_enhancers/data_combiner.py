@@ -40,7 +40,7 @@ def combine(file_list, header, output_file, axis, sep ='\t', index = False):
     else:
         # Read in all files
         for file in file_list:
-            frames_list.append(pd.read_table(file), header = None)
+            frames_list.append(pd.read_table(file, header = None))
             
     # Combine and save
     pd.concat(frames_list, axis = axis).to_csv(output_file, sep = sep,
