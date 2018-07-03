@@ -1,12 +1,12 @@
 
 # coding: utf-8
 
-# Counts k-mers for each herv by reading command line argument with file name, with directory at:
-# /dors/capra_lab/users/yand1/te_ml/data/2018_06_28_kmers_faster/batch_input 
-# After reading in the file, it creates a count of the number of each kmer within each HERV and stores
-# this feature matrix at:
-# /dors/capra_lab/users/yand1/te_ml/data/2018_06_28_kmers_faster/batch_output
-# This version is a local version for testing of a full version on accre for batch array processing of data to create a feature matrix.
+# kmer_counter_batch is a modified version of a similar file at
+# /dors/capra_lab/users/yand1/te_ml/bin/2018_06_28_kmers_faster/accre
+# This one processes data at:
+# /dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/batch_input
+# by taking in a command line argument and counting kmers, normalizing counts, and saving to
+# /dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/batch_output
 
 # In[1]:
 
@@ -26,7 +26,8 @@ K = 6 # Length of "k" value for k-mer
 CHR = 0 # Column of chromosome of herv in data file
 START = 1 # Column of start location of herv in data file
 END = 2 # Column of end location of herv in data file
-PAIRS = 3 # Column with string of actual pairs within herv
+LABEL = 3 # Column with label of herv, enhancer, or herv_enhancer intersection
+PAIRS = 4 # Column with string of actual pairs within herv
 ALPHABET = "acgt" # Alphabet of base pairs in k-mers
 
 
@@ -88,20 +89,45 @@ def parse_pairs(row):
     return row
 
 
+# In[ ]:
+
+
+def normalize_row(row):
+    """Divides the count of kmers by the number of pairs to get normalized value for PCA
+    
+    Args:
+        row(pd.Series): Single row representing a HERV with counts of k-mers
+        
+    Return:
+        row(pd.Series): Row that has k-mer counts divided by number of base pairs
+    """
+    # Get number of pairs in current row
+    pairs_length = len(row[PAIRS])
+    
+    # Update k-kmer counts
+    for i in range(PAIRS + 1, len(row)):
+        row.iloc[i] = (row.iloc[i])/pairs_length
+    
+    return row
+
+
 # In[6]:
 
 
 ## Main
 def main():
-    data_file = sys.argv[1] # Get name of data file to process from command line.
-    write_file = data_file[:-4] + "_features_matrix.tsv" # File to write features matrix to.
+    # Get name of data file to process from command line.
+    data_file = sys.argv[1]
+    # File to write features matrix to. Remove ".tsv" from the original first, then add new ending.
+    write_file = data_file[:-4] + "_features_matrix.tsv" 
     
     # Read in file as pandas dataframe
-    hervs_df = pd.read_table(DIRECTORY + "data/2018_06_28_kmers_faster/batch_input/" +
+    hervs_df = pd.read_table(DIRECTORY + "data/2018_07_03_pca_te_enhancers/batch_input/" +
                              data_file, header = None)
     
     # Rename columns
-    hervs_df = hervs_df.rename(columns = {CHR: "chr", START: "start", END: "end", PAIRS: "pairs"})
+    hervs_df = hervs_df.rename(columns = {CHR: "chr", START: "start", END: "end",
+                                          LABEL: "label", PAIRS: "pairs"})
     
     # Generate all possible k-mers
     kmers_list = generate_kmers()
@@ -114,8 +140,12 @@ def main():
     # how many times each k-mer appears.
     features_df = count_kmers(features_df = features_df)
     
+    # Normalize counts by dividing kmer counts in each row by the number of bases
+    features_df = features_df.apply(normalize_rows, axis = "columns")
+    
+    # Save to file
     features_df.to_csv(DIRECTORY + "data/2018_06_28_kmers_faster/batch_output/" + write_file, 
-                       sep = '\t', index = False, header = False)
+                       sep = '\t', index = False)
 
 
 # In[7]:
