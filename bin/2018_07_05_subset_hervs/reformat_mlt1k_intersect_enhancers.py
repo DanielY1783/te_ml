@@ -38,7 +38,7 @@ def main():
     features_df = pd.read_table(DIRECTORY + "data/" + DATE_INFO + DATA_FILE, header = None)
     
     # Change 1 for overlap, -1 for no overlap
-    features_df.iloc[CHR_INTERSECT] = (features_df.iloc[CHR_INTERSECT].apply
+    features_df.iloc[,CHR_INTERSECT] = (features_df.iloc[,CHR_INTERSECT].apply
                                          (lambda x: 0 if x == "." else 1))
     
     # Drop unneeded columns
@@ -46,7 +46,7 @@ def main():
                      axis ="columns", inplace = True)
     
     # Get count of number of overlaps and save to file.
-    overlaps = features_df.iloc[CHR_INTERSECT].sum()
+    overlaps = features_df.iloc[,CHR_INTERSECT].sum()
     with open(DIRECTORY + "results/" + DATE_INFO + "count_overlaps.txt", mode = "w+") as file:
         file.write("Overlaps: " + str(overlaps) + '\n')
         file.write("No overlaps: " + str(features_df.shape[0] - overlaps) + '\n')
