@@ -99,7 +99,7 @@ def main():
     
     # Rename columns
     hervs_df = hervs_df.rename(columns = {CHR: "chr", START: "start", END: "end", 
-                                          ENHANCER = "enhancer", PAIRS: "pairs"})
+                                          ENHANCER: "enhancer", PAIRS: "pairs"})
     
     # Generate all possible k-mers
     kmers_list = generate_kmers()
