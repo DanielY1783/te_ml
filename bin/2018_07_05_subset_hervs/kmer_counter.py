@@ -104,8 +104,12 @@ def main():
     # Generate all possible k-mers
     kmers_list = generate_kmers()
                                           
+    # Create features matrix with columns as the different kmers
+    features_df = hervs_df.reindex(columns = (hervs_df.columns.tolist() + kmers_list), 
+                                                      fill_value = 0)
+                                          
     # Create features matrix containing count of each k-mer from the base pairs data frame
-    features_matrix = count_kmers(pairs_df = hervs_df, kmers_list = kmers_list)
+    features_matrix = count_kmers(features_df = features_df, kmers_list = kmers_list)
     
     features_matrix.to_csv(DIRECTORY + "data/" + DATE_DIR + WRITE_FILE, sep = '\t', index = False)
 
