@@ -60,7 +60,7 @@ def main():
     
     # Save to file.
     features_df.to_csv(DIRECTORY + "data/" + DATE_INFO + REFORMATTED_DATA_FILE, 
-                       index = False, sep = '\t')
+                       index = False, header = False, sep = '\t')
 
 
 # In[ ]:
