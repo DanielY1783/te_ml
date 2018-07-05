@@ -14,7 +14,7 @@ PAIRS <- 4 # Column with base pairs
 
 # Read in input file as data frame.
 hervs_df <- read.table(paste(DIRECTORY, "data/2018_07_03_pca_te_enhancers/", DATA_FILE, sep = "")
-                       ,header = TRUE)
+                       , header = TRUE, fill = TRUE)
 
 
 # Save to png file
