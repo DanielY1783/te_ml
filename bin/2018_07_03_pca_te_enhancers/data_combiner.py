@@ -59,7 +59,7 @@ if __name__ == "__main__":
     file_list = []
     for i in range(100):
         file_list.append("/dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/batch_output/combined_hg19_{}_features_matrix.tsv".format(i))
-    combine(file_list = file_list, header = False, 
+    combine(file_list = file_list, header = True, 
             output_file = "/dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/combined_features_matrix.tsv",
             axis = "index")
 
