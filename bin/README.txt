@@ -44,4 +44,6 @@
 
 2018_07_03_pca_te_enhancers: Principal component analysis on kmers from transposable 
 	elements only, intersection of tranposable elements and enhancers, and enhancers only. Uses chromhmm
+	
+2018_07_05_subset_hervs: Retrain machine learning model on a smaller subset of HERVs.
 			
