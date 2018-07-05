@@ -19,7 +19,7 @@ from itertools import product # For generating all possible 6-mers
 
 # Class constants
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory for project
-DATE = "2018_07_05_subset_hervs/" # Directory corresponding to date
+DATE_DIR = "2018_07_05_subset_hervs/" # Directory corresponding to date
 DATA_FILE = "pairs_mlt1k_enhancers.tsv"
 WRITE_FILE = "mlt1k_kmers_features_matrix.tsv" # File to save results to
 K = 6 # Length of "k" value for k-mer
