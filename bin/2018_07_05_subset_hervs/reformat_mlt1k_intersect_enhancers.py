@@ -49,7 +49,7 @@ def main():
     features_df.columns = ["chr", "start", "end", "enhancer"]
     
     # Get count of number of overlaps and save to file.
-    overlaps = features_df.loc["enhancer"].sum()
+    overlaps = features_df.loc[:,"enhancer"].sum()
     with open(DIRECTORY + "results/" + DATE_INFO + "count_overlaps.txt", mode = "w+") as file:
         file.write("Overlaps: " + str(overlaps) + '\n')
         file.write("No overlaps: " + str(features_df.shape[0] - overlaps) + '\n')
