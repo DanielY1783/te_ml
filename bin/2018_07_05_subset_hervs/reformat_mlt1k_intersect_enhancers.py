@@ -18,7 +18,7 @@ import pandas as pd
 
 # Class constants
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/"
-DATE_INFO = "2018_07_05_subset_hervs"
+DATE_INFO = "2018_07_05_subset_hervs/" # Directory associated with date
 DATA_FILE = "enhancers_mlt1k_intersect.tsv"
 REFORMATTED_DATA_FILE = "reformatted_enhancers_mlt1k_intersect.tsv" # New data file to write to
 HERV_TYPE = 3 # Column with type of HERV
