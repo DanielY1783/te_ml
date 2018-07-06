@@ -3,7 +3,7 @@
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --time=00:30:00       
+#SBATCH --time=00:90:00       
 #SBATCH --mem=128G
 #SBATCH --output=/dors/capra_lab/users/yand1/te_ml/results/2018_07_03_pca_te_enhancers/pca_output.txt
 
