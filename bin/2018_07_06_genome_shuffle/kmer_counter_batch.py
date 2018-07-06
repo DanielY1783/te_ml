@@ -92,6 +92,17 @@ def parse_pairs(row):
 # In[ ]:
 
 
+def normalize_counts(df):
+    """Normalize all kmer counts by dividing by the total number of
+    """
+    # Normalize counts by dividing kmer counts in each row by the number of bases
+    df = df.apply(normalize_row, axis = "columns")
+    return df
+
+
+# In[ ]:
+
+
 def normalize_row(row):
     """Divides the count of kmers by the number of pairs to get normalized value for PCA
     
@@ -139,9 +150,6 @@ def main():
     # Update the features matrix by going through all the base pair strings and counting
     # how many times each k-mer appears.
     features_df = count_kmers(features_df = features_df)
-    
-    # Normalize counts by dividing kmer counts in each row by the number of bases
-    features_df = features_df.apply(normalize_row, axis = "columns")
     
     # Save to file
     features_df.to_csv(DIRECTORY + "data" + DATE_DIR + "batch_output/" + write_file, 
