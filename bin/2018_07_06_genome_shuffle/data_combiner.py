@@ -62,8 +62,8 @@ def combine(file_list, header, output_file, axis, sep ='\t', index = False):
 
 if __name__ == "__main__":
     file_list = []
-    for i in range(5):
-        file_list.append("/dors/capra_lab/users/yand1/te_ml/data/2018_07_06_genome_shuffle/batch_input/shuffle_{}.tsv".format(i))
+    for i in range(100):
+        file_list.append("/dors/capra_lab/users/yand1/te_ml/data/2018_07_06_genome_shuffle/batch_output/shuffle_{}_features_matrix.tsv".format(i))
     combine(file_list = file_list, header = True, 
             output_file = "/dors/capra_lab/users/yand1/te_ml/data/2018_07_06_genome_shuffle/all_pairs_features_matrix.tsv",
             axis = "index")
