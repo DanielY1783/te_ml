@@ -23,7 +23,7 @@ K = 6 # Length of "k" value for k-mer
 CHR = 0 # Column of chromosome of herv in data file
 START = 1 # Column of start location of herv in data file
 END = 2 # Column of end location of herv in data file
-HERV = 3 # Column with HERV
+LABEL = 3 # Label for column
 PAIRS = 4 # Column with string of actual pairs within herv
 ALPHABET = "acgt" # Alphabet of base pairs in k-mers
 
