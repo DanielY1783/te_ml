@@ -1,9 +1,8 @@
 
 # coding: utf-8
 
-# Counts kmers within 
-# /dors/capra_lab/users/yand1/te_ml/data/2018_07_06_genome_shuffle/all_pairs.tsv
-# and saves kmer counts as features matrix for machine learning.
+# Repurposed version of /dors/capra_lab/users/yand1/te_ml/bin/2018_07_03_pca_te_enhancers/kmer_counter_batch
+# that does kmer counting on smaller split up data files for batch processing.
 
 # In[1]:
 
@@ -20,8 +19,6 @@ import sys # For getting name of data file as command line argument
 # Class constants
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/" # Root directory for project
 DATE_DIR = "2018_07_06_genome_shuffle/" # Directory corresponding to date
-DATA_FILE = "all_pairs.tsv"
-WRITE_FILE = "shuffle_features_matrix.tsv" # File to save results to
 K = 6 # Length of "k" value for k-mer
 CHR = 0 # Column of chromosome of herv in data file
 START = 1 # Column of start location of herv in data file
