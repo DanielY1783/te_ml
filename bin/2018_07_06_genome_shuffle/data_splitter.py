@@ -36,7 +36,7 @@ def main():
         end_row = (i + 1) * (rows_num/SPLITS)
         temp_df = hervs_df.loc[start_row:end_row,]
         # Save to file
-        temp_df.to_csv(DIRECTORY + "data/" + DATE_DIR + "/batch_input/features_" + str(i) + ".tsv", 
+        temp_df.to_csv(DIRECTORY + "data/" + DATE_DIR + "/batch_input/shuffle_" + str(i) + ".tsv", 
                        sep = '\t', index = False, header = False)
 
 
