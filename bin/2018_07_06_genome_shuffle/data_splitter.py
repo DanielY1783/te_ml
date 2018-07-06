@@ -59,7 +59,9 @@ if __name__ == "__main__":
     df_list = split_data(df = hervs_df)
     
     # Save to files
+    count = 0;
     for df in df_list:
-        df.to_csv("/dors/capra_lab/users/yand1/te_ml/data/2018_07_06_genome_shuffle/batch_input/shuffle_" + str(i) + ".tsv", 
+        df.to_csv("/dors/capra_lab/users/yand1/te_ml/data/2018_07_06_genome_shuffle/batch_input/shuffle_" + str(count) + ".tsv", 
                        sep = '\t', index = False, header = False)
+        count += 1
 
