@@ -130,7 +130,7 @@ def main():
     write_file = data_file[:-4] + "_features_matrix.tsv" 
     
     # Read in file as pandas dataframe
-    hervs_df = pd.read_table(DIRECTORY + "data" + DATE_DIR + "batch_input/" +
+    hervs_df = pd.read_table(DIRECTORY + "data/" + DATE_DIR + "batch_input/" +
                              data_file, header = None)
     
     # Rename columns
@@ -149,7 +149,7 @@ def main():
     features_df = count_kmers(features_df = features_df)
     
     # Save to file
-    features_df.to_csv(DIRECTORY + "data" + DATE_DIR + "batch_output/" + write_file, 
+    features_df.to_csv(DIRECTORY + "data/" + DATE_DIR + "batch_output/" + write_file, 
                        sep = '\t', index = False)
 
 
