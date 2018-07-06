@@ -28,11 +28,11 @@ png(
 # Generate PCA, but leave out the enhancer column as classifier. Keep in 2 dimensions for graphing.
 pca_df <- subset(hervs_df, select = -c(CHROMOSOME, START, END, LABEL, PAIRS))
 pca_hervs_enhancers <- PCA(pca_df, graph = FALSE, ncp = 2)
-# pca_graph <-fviz_pca_ind(pca_hervs_enhancers,
-#                          geom.ind = "point", # Show points
-#                          col.ind = hervs_df$label, # Color by presence or absence of enhancers.
-#                          legend.title = "Enhancer Overlap")
-# # Change color palette.
-# print(ggpubr::ggpar(pca_graph, palette = "rainbow"))
+pca_graph <-fviz_pca_ind(pca_hervs_enhancers,
+                         geom.ind = "point", # Show points
+                         col.ind = hervs_df$label, # Color by presence or absence of enhancers.
+                         legend.title = "Enhancer Overlap")
+# Change color palette.
+print(ggpubr::ggpar(pca_graph, palette = "rainbow"))
 # Close png file
 dev.off()
