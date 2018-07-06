@@ -89,7 +89,7 @@ def main():
     y_df = features_df.loc[:,ENHANCER_OVERLAP]
     
     # Split data into training and testing set.
-    x_train, x_test, y_train, y_test = train_test_split(x, y)
+    x_train, x_test, y_train, y_test = train_test_split(x_df, y_df)
     
     # Create a random forest classifier model. -1 to parallelize.
     rfc = RandomForestClassifier(n_estimators = 100, n_jobs = -1)
