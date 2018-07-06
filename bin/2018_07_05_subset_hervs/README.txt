@@ -11,3 +11,6 @@ reformat_mlt1k_intersect_enhancers:
 	This program takes in
 	/dors/capra_lab/users/yand1/te_ml/data/2018_07_05_subset_hervs/enhancers_mlt1k_intersect.tsv
 	and changes overlap to boolean value: 1 for overlap between transposable element and enhancer; 0 for no overlap.
+
+rf_kmers: Random forest model with n_estimators = 100 run on the mlt1k kmers feature matrix at:
+	/dors/capra_lab/users/yand1/te_ml/data/2018_07_05_subset_hervs/mlt1k_kmers_features_matrix.tsv
