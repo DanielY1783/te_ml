@@ -47,3 +47,6 @@
 2018_07_05_subset_hervs: Retrain machine learning model on a smaller subset of HERVs.
 			
 2018_07_06_genome_shuffle: Classify hervs vs random parts of the human genome
+
+2018_07_09_shuffle_ml: Machine learning models on classifying hervs vs random parts of the human genome.
+
