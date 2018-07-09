@@ -121,7 +121,7 @@ def scatterplot_pca(df, file_name, labels_set, colors_list, figsize = (20, 20),
 
 if __name__ == "__main__":
     # Load in data file
-    df = pd.read_table("/dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/test.tsv")
+    df = pd.read_table("/dors/capra_lab/users/yand1/te_ml/data/2018_07_03_pca_te_enhancers/combined_features_matrix.tsv")
     
     # Get features used in PCA
     features_df = df.loc[:,"aaaaaa":"tttttt"]
