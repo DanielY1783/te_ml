@@ -32,17 +32,13 @@
 
 2018_06_27_kmer_hervs_chromehmm: kmer counter that creates a feature matrix of 6-mer counts from the data at /dors/capra_lab/users/yand1/te_ml/data/2018_06_26_kmers_hervs_chromehmm/hervs_hg19.tsv
 		
-2018_06_28_kmers_faster: Faster implementation of kmer counter from 2018_06_27_kmer_hervs_chromehmm
-		that works better with pandas dataframes.
+2018_06_28_kmers_faster: Faster implementation of kmer counter from 		2018_06_27_kmer_hervs_chromehmm that works better with pandas dataframes.
 		
-2018_06_29_kmers_enhancer_intersect: Reformatting scripts for features matrix of kmers for hervs.
-		PCA and histogram analysis on features matrix after intersection with chromehmm enhancers.
+2018_06_29_kmers_enhancer_intersect: Reformatting scripts for features matrix of kmers for hervs. PCA and histogram analysis on features matrix after intersection with chromehmm enhancers.
 		
-2018_07_02_kmers_pca_rf: Principal component analysis, random forest classifier, gradient
-		boosting classifier, and support vector classifier run on 	/dors/capra_lab/users/yand1/te_ml/data/2018_06_29_kmers_enhancers_intersect/reformatted_hervs_kmers_intersect_enhancers.tsv
+2018_07_02_kmers_pca_rf: Principal component analysis, random forest classifier, gradient boosting classifier, and support vector classifier run on 	/dors/capra_lab/users/yand1/te_ml/data/2018_06_29_kmers_enhancers_intersect/reformatted_hervs_kmers_intersect_enhancers.tsv
 
-2018_07_03_pca_te_enhancers: Principal component analysis on kmers from transposable 
-	elements only, intersection of tranposable elements and enhancers, and enhancers only. Uses chromhmm
+2018_07_03_pca_te_enhancers: Principal component analysis on kmers from transposable elements only, intersection of tranposable elements and enhancers, and enhancers only. Uses chromhmm
 	
 2018_07_05_subset_hervs: Retrain machine learning model on a smaller subset of HERVs.
 			
@@ -50,3 +46,4 @@
 
 2018_07_09_shuffle_ml: Machine learning models on classifying hervs vs random parts of the human genome.
 
+2018_07_09_pca_te_enhancers: Python version of principal component analysis on kmers from transposable elements only, intersection of tranposable elements and enhancers, and enhancers only. Uses chromhmm enhancers.
