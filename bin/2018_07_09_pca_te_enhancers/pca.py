@@ -140,5 +140,5 @@ if __name__ == "__main__":
     scatterplot_pca(df = transformed_df, file_name = 
                     "/dors/capra_lab/users/yand1/te_ml/results/2018_07_09_pca_te_enhancers/pca.png",
                    labels_set = set(labels_df), colors_list = ["teal", "red", "darkblue"],
-                   title = "PCA on HERVs, enhancers, and HERV-enhancer overlap using 6-mers")
+                   title = "PCA on HERVs, enhancers, and HERV-enhancer overlap using 6-mers", alpha = 0.2)
 
