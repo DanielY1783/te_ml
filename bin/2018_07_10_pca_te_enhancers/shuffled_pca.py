@@ -74,7 +74,7 @@ def main():
                    alpha = 0.2)
     
     # Print out the explained variance ratios to file
-    with open("/dors/capra_lab/users/yand1/te_ml/results/
+    with open("/dors/capra_lab/users/yand1/te_ml/results/"
               "2018_07_10_pca_te_enhancers/variance_ratios.txt", mode = "w+") as file:
         int count = 1
         for i in ipca.explained_variance_ratio_:
