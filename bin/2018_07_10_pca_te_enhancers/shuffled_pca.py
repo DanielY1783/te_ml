@@ -11,6 +11,7 @@
 
 
 # Libaries
+import pandas as pd
 import pca
 from sklearn.decomposition import IncrementalPCA
 
