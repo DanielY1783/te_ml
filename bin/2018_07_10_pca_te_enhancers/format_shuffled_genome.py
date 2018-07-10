@@ -8,14 +8,14 @@
 # Finds the shuffled parts of the human genome within the features matrices in files 50-99 from /dors/capra_lab/users/yand1/te_ml/data/2018_07_10_pca_te_enhancers/batch_output
 # and normalize them by dividing by the number of base pairs. Store the new features matrix containing only information about shuffled parts of the human genome to a /dors/capra_lab/users/yand1/te_ml/data/2018_07_10_pca_te_enhancers/shuffled_features_matrix.tsv
 
-# In[1]:
+# In[ ]:
 
 
 # Libraries
 import pandas as pd
 
 
-# In[2]:
+# In[ ]:
 
 
 def normalize_counts(df):
@@ -26,7 +26,7 @@ def normalize_counts(df):
     return df
 
 
-# In[3]:
+# In[ ]:
 
 
 def normalize_row(row):
@@ -69,7 +69,7 @@ def combine(file_list, axis = "index"):
     return pd.concat(frames_list, axis = axis) 
 
 
-# In[4]:
+# In[ ]:
 
 
 def main():
@@ -89,14 +89,14 @@ def main():
     combined_df = combine(file_list)
     
     # Normalize counts 
-    combined_df = combined_df.apply(normalize_counts(), axis = "columns")
+    combined_df = normalize_counts(combined_df)
     
     # Save to new file
     combined_df.to_csv("/dors/capra_lab/users/yand1/te_ml/data/2018_07_10_pca_te_enhancers/shuffled_features_matrix.tsv",
                       header = False, Index = False, sep = '\t')
 
 
-# In[5]:
+# In[ ]:
 
 
 # Call main to run
