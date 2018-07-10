@@ -47,3 +47,5 @@
 2018_07_09_shuffle_ml: Machine learning models on classifying hervs vs random parts of the human genome.
 
 2018_07_09_pca_te_enhancers: Python version of principal component analysis on kmers from transposable elements only, intersection of tranposable elements and enhancers, and enhancers only. Uses chromhmm enhancers.
+
+2018_07_10_pca_te_enhancers: Python version of principal component analysis on kmers from transposable elements only, intersection of tranposable elements and enhancers, and enhancers only. Uses chromhmm enhancers.
