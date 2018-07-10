@@ -18,6 +18,13 @@ import pandas as pd
 # In[ ]:
 
 
+# Constants
+PAIRS = 4 # Column with base pairs
+
+
+# In[ ]:
+
+
 def normalize_counts(df):
     """Normalize all kmer counts by dividing by the total number of bases
     """
