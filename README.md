@@ -1,4 +1,4 @@
-# te_ml
+# Machine Learning on Transposable Elements
 Machine learning models on transposable elements and their intersection with enhancers.
 
 Includes random forest classifier and support vector classifier to predict HERV overlap with fantom enhancers based on transcription 
