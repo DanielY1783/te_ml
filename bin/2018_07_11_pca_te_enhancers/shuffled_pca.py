@@ -7,7 +7,7 @@
 # 
 # Principal component analysis on HERVs, enhancers, HERV-enhancer intersect, and control population of shuffled parts of the human genome.
 
-# In[1]:
+# In[ ]:
 
 
 # Libaries
@@ -20,12 +20,13 @@ import matplotlib.pyplot as plt
 import itertools # Generator
 
 
-# In[2]:
+# In[ ]:
 
 
 # Constants
-ROOT_DIR = "../../" # Root directory for project
+_ROOT_DIR = "../../" # Root directory for project
 COLORS_LIST = ["orangered", "indigo", "limegreen", "dodgerblue"]
+N_COMPONENTS = 10 # Number of components in PCA
 
 
 # In[ ]:
@@ -72,14 +73,12 @@ def generate_combinations(elements, n = 2):
     return list(combinations_iter)
 
 
-# In[3]:
+# In[ ]:
 
 
 if __name__ == "__main__":
-        """Main function to run everything
-        """
         # Load in data file
-        df = pd.read_table(ROOT_DIR + "data/2018_07_11_pca_te_enhancers/test.tsv")
+        df = pd.read_table(_ROOT_DIR + "data/2018_07_11_pca_te_enhancers/test.tsv")
 
         # Get features used in PCA
         features_df = df.loc[:,"aaaaaa":"tttttt"]
@@ -88,7 +87,7 @@ if __name__ == "__main__":
         labels_df = df.loc[:,"label"]
 
         # Create the PCA
-        ipca = IncrementalPCA(n_components = 10)
+        ipca = IncrementalPCA(n_components = N_COMPONENTS)
         features_transformed = ipca.fit_transform(features_df)
 
         # Label the transformed coordinates
@@ -100,54 +99,35 @@ if __name__ == "__main__":
 
         # Create combinations of principal components to plot
         components = (1, 2, 3, 4, 5)
-        combinations_list = generate_permutations(components)
+        combinations_list = generate_combinations(components)
 
-        # Plot all possible combinations
+        # Plot different combinations of principal components
         for combination in combinations_list:
+            
+            component_x = combination[0] # Component on x-axis
+            component_y = combination[1] # Component on y-axis
             
             # Plot the pca
             pca.scatterplot_pca(df = transformed_df, 
-                                file_name = ROOT_DIR + "results/2018_07_11_pca_te_enhancers/pca_all_{}_{}"
-                                    .format(combination[0], combination[1]),
+                                file_name = _ROOT_DIR + "results/2018_07_11_pca_te_enhancers"
+                                "/components_{}_{}/pca.png"
+                                    .format(component_x, component_y),
                                 labels_list = labels_list,
                                 colors_list = COLORS_LIST,
                                 title = "All labels on components {} and {}"
-                                    .format(combination[0], combination[1]),
-                                component_x = combination[0])
-
-#         # Plot just the HERVs
-#         pca.scatterplot_pca(df = transformed_df, file_name = 
-#                         "/dors/capra_lab/users/yand1/te_ml/results/2018_07_10_pca_te_enhancers/pca_hervs.png",
-#                        labels_set = set(["herv_only"]), colors_list = ["orangered"],
-#                        title = "HERVs only", 
-#                        alpha = 0.2)
-
-#         # Plot just the enhancers
-#         pca.scatterplot_pca(df = transformed_df, file_name = 
-#                         "/dors/capra_lab/users/yand1/te_ml/results/2018_07_10_pca_te_enhancers/pca_enhancers.png",
-#                        labels_set = set(["enhancer_only"]), colors_list = ["indigo"],
-#                        title = "Enhancers only", 
-#                        alpha = 0.2)
-
-#         # Plot just HERV-enhancer intersection
-#         pca.scatterplot_pca(df = transformed_df, file_name = 
-#                         "/dors/capra_lab/users/yand1/te_ml/results/2018_07_10_pca_te_enhancers/pca_intersect.png",
-#                        labels_set = set(["herv_enhancer_intersect"]), colors_list = ["lime"],
-#                        title = "HERV-enhancer intersect", 
-#                        alpha = 0.2)    
-
-#         # Plot just the control of shuffled elements in the human genome
-#         pca.scatterplot_pca(df = transformed_df, file_name = 
-#                         "/dors/capra_lab/users/yand1/te_ml/results/2018_07_10_pca_te_enhancers/pca_control.png",
-#                        labels_set = set(["shuffled_genome"]), colors_list = ["cyan"],
-#                        title = "Control", 
-#                        alpha = 0.2)
+                                    .format(component_x, component_y),
+                                component_x = component_x,
+                                component_y = component_y,
+                                x_label = "Component {} accounting for {}% of variation".format(
+                                    component_x, 100 * ipca.explained_variance_ratio_[component_x]),
+                                y_label = "Component {} accounting for {}% of variation".format(
+                                    component_y, 100 * ipca.explained_variance_ratio_[component_y]))
 
         # Print out the explained variance ratios to file
-        with open(ROOT_DIR + "results/2018_07_11_pca_te_enhancers/test_variance_ratios.txt", 
+        with open(_ROOT_DIR + "results/2018_07_11_pca_te_enhancers/test_variance_ratios.txt", 
                   mode = "w+") as file:
             count = 1
             for i in ipca.explained_variance_ratio_:
-                file.write("Explained Variance Ratio for Component {}: {}\n".format(count, i))
+                file.write("Explained Variance Ratio for Component {}: {}%\n".format(count, i * 100))
                 count += 1
 
