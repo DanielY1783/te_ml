@@ -131,4 +131,5 @@ def scatterplot_pca(df, file_name, labels_list, colors_list, labels_col_name = "
     plt.xlabel(x_label, fontsize = fontsize)
     plt.ylabel(y_label, fontsize = fontsize)
     plt.savefig(file_name)
+    plt.close()
 

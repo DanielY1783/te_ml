@@ -7,7 +7,7 @@
 # 
 # Principal component analysis on HERVs, enhancers, HERV-enhancer intersect, and control population of shuffled parts of the human genome.
 
-# In[ ]:
+# In[1]:
 
 
 # Libaries
@@ -18,9 +18,10 @@ import matplotlib
 matplotlib.use("Agg") # Avoid display error
 import matplotlib.pyplot as plt
 import itertools # Generator
+import os # Make directories as needed
 
 
-# In[ ]:
+# In[2]:
 
 
 # Constants
@@ -29,7 +30,7 @@ COLORS_LIST = ["orangered", "indigo", "limegreen", "dodgerblue"]
 N_COMPONENTS = 10 # Number of components in PCA
 
 
-# In[ ]:
+# In[3]:
 
 
 def generate_configurations(elements, n = 2):
@@ -51,7 +52,7 @@ def generate_configurations(elements, n = 2):
     return list(permutations_iter)
 
 
-# In[ ]:
+# In[4]:
 
 
 def generate_combinations(elements, n = 2):
@@ -73,7 +74,7 @@ def generate_combinations(elements, n = 2):
     return list(combinations_iter)
 
 
-# In[ ]:
+# In[5]:
 
 
 if __name__ == "__main__":
@@ -107,11 +108,15 @@ if __name__ == "__main__":
             component_x = combination[0] # Component on x-axis
             component_y = combination[1] # Component on y-axis
             
+            # Create directory if it does not exist
+            directory = (_ROOT_DIR + "results/2018_07_11_pca_te_enhancers/components_{}_{}/"
+                         .format(component_x, component_y))
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+            
             # Plot the pca
             pca.scatterplot_pca(df = transformed_df, 
-                                file_name = _ROOT_DIR + "results/2018_07_11_pca_te_enhancers"
-                                "/components_{}_{}/pca.png"
-                                    .format(component_x, component_y),
+                                file_name = directory + "pca.png",
                                 labels_list = labels_list,
                                 colors_list = COLORS_LIST,
                                 title = "All labels on components {} and {}"
@@ -122,6 +127,26 @@ if __name__ == "__main__":
                                     component_x, 100 * ipca.explained_variance_ratio_[component_x]),
                                 y_label = "Component {} accounting for {}% of variation".format(
                                     component_y, 100 * ipca.explained_variance_ratio_[component_y]))
+            
+            # Plot each of the individual labels to prevent overlapping issues.
+            count = 0
+            for label in labels_list:
+                pca.scatterplot_pca(df = transformed_df, 
+                                file_name = _ROOT_DIR + "results/2018_07_11_pca_te_enhancers"
+                                "/components_{}_{}/{}.png"
+                                    .format(component_x, component_y, label),
+                                labels_list = [label],
+                                colors_list = [COLORS_LIST[count]],
+                                title = "{} on components {} and {}"
+                                    .format(label, component_x, component_y),
+                                component_x = component_x,
+                                component_y = component_y,
+                                x_label = "Component {} accounting for {}% of variation".format(
+                                    component_x, 100 * ipca.explained_variance_ratio_[component_x]),
+                                y_label = "Component {} accounting for {}% of variation".format(
+                                    component_y, 100 * ipca.explained_variance_ratio_[component_y]))
+                # Increment count for color
+                count += 1
 
         # Print out the explained variance ratios to file
         with open(_ROOT_DIR + "results/2018_07_11_pca_te_enhancers/test_variance_ratios.txt", 
