@@ -1,6 +1,13 @@
 # te_ml
-Trains a random forest classifier machine learning model on transposable elements data to predict enhancer overlap with transposable elements.
+Machine learning models on transposable elements and their intersection with enhancers.
+
+Includes random forest classifier and support vector classifier to predict HERV overlap with fantom enhancers based on transcription 
+factors, random forest classifier and gradient boosted decision trees to predict HERV overlap with chromhmm enhancers based
+on 6-mers, random forest classifer for HERVs vs generic parts of the human genome as baseline, and principal component analysis on HERVs,
+enhancers, and HERV-enhancer overlap based on 6-mers.
 
 Data files are too large to store on Github and are on the Vanderbilt ACCRE cluster at: /dors/capra_lab/users/yand1/te_ml/data
 
 Results files are also on the Vanderbilt ACCRE cluster at: /dors/capra_lab/users/yand1/te_ml/results
+
+test_requirements.txt: Provides dependencies for travis testing.
