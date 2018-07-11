@@ -1,0 +1,5 @@
+language: python
+python: "3.6"
+install: ./install-dependencies.sh
+script: pytest bin/2018_07_11_pca_te_enhancers/test_shuffled_pca.py
+
