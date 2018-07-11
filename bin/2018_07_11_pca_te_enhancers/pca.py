@@ -7,7 +7,7 @@
 # 
 # Module for an incremental principal component analysis on larger data sets.
 
-# In[1]:
+# In[ ]:
 
 
 # Libaries
@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-# In[2]:
+# In[ ]:
 
 
 # Class Constants
@@ -27,7 +27,7 @@ N_COMPONENTS = 2 # Number of principal components to keep
 BATCH_SIZE = None # Size of incremental pca batch to control for memory usage. Can be int or None.
 
 
-# In[3]:
+# In[ ]:
 
 
 def create_ipca(features, n_components = N_COMPONENTS, batch_size = BATCH_SIZE):
@@ -50,10 +50,10 @@ def create_ipca(features, n_components = N_COMPONENTS, batch_size = BATCH_SIZE):
     return ipca.fit_transform(features_df)
 
 
-# In[4]:
+# In[ ]:
 
 
-def label_coordinates(transformed_coordinates, labels):
+def label_coordinates(transformed_coordinates, labels, labels_col_name = "label"):
     """Labels the transformed coordinates with the correct group.
     
     Keyword Arguments:
@@ -61,6 +61,9 @@ def label_coordinates(transformed_coordinates, labels):
         
         labels: Array-like object containing labels for the coordinates. The labels should be in
             the same order as the rows in transformed_coordinates
+            
+        labels_col_name: String for the name of the column containing the labels within the dataframe
+            (default = "label")
         
     Return: Pandas dataframe with labels inserted as the last column of transformed_coordinates
     """
@@ -68,12 +71,12 @@ def label_coordinates(transformed_coordinates, labels):
     transformed_df = pd.DataFrame(transformed_coordinates)
     
     # Label the transformed data
-    transformed_df["label"] = labels
+    transformed_df[labels_col_name] = labels
     
     return transformed_df
 
 
-# In[5]:
+# In[ ]:
 
 
 def scatterplot_pca(df, file_name, labels_list, colors_list, labels_col_name = "label",
@@ -92,7 +95,8 @@ def scatterplot_pca(df, file_name, labels_list, colors_list, labels_col_name = "
         colors_list: List of colors used for the different labels.
         
         labels_col_name: String for the name of the column containing the labels within the dataframe
-            (default = "label")
+            (default = "label"). Must be same as labels_col_name parameter in 
+            label_coordinates function.
         
         figsize: Tuple containing height and width of the figure in inches (default (20, 20))
         
