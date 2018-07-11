@@ -1,5 +1,5 @@
 language: python
 python: "3.6"
 install: pip install -r test_requirements.txt
-script: pytest bin/2018_07_11_pca_te_enhancers/test_shuffled_pca.py
+script: pytest -v bin/2018_07_11_pca_te_enhancers/test_shuffled_pca.py
 
