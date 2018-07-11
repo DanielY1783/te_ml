@@ -7,5 +7,5 @@ format_shuffled_genome.slurm submits the program to the accre scheduler
 
 shuffled_pca.py: Principal component analysis on HERVs, enhancers, intersection of HERVs and enhancers, and a control of random parts of the human genome using the pca.py module.
 
-test_shuffled_pca.py: Pytest tests for shuffled_pca.py
+test_shuffled_pca.py: Unit testing for shuffled_pca.py
 
