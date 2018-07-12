@@ -51,3 +51,15 @@
 2018_07_10_pca_te_enhancers: Python version of principal component analysis on kmers from transposable elements only, intersection of tranposable elements and enhancers, and enhancers only. Uses chromhmm enhancers.
 
 2018_07_11_pca_te_enhancers: Python version of principal component analysis on kmers from transposable elements only, intersection of tranposable elements and enhancers, enhancers only, and a control of generic shuffled parts of the human genome. Uses chromhmm enhancers.
+
+2018_07_12_pca_te_enhancers: Same as 2018_07_11_te_enhancers, but try vectorized operations in pandas to increase efficiency.
+
+
+TESTED MODULES
+The following modules contain components with Travis tests and can be safely reused.
+Individual components within the modules are listed after the modules.
+
+2018_07_11_pca_te_enhancers/shuffled_pca.py
+	generate_combinations(elements, n = 2)
+	generate_configurations(elements, n = 2)
+
