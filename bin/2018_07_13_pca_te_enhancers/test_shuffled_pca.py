@@ -1,12 +1,8 @@
+# Name: Daniel Yan
+# Date: 2018-07-13
+# Email: daniel.yan@vanderbilt.edu
 
-# coding: utf-8
-
-# File to run tests on functions within shuffled_pca.py that are easy to test
-
-# In[ ]:
-
-
-# Tests for shuffled_pca.py
+# Tests on functions within shuffled_pca.py
 import shuffled_pca as sp
 
 def test_generate_configurations_1():

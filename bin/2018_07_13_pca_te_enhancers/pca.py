@@ -45,7 +45,8 @@ def label_coordinates(transformed_coordinates, labels, labels_col_name = "label"
     """Labels the transformed coordinates with the correct group.
     
     Keyword Arguments:
-        transformed_coordinates: Numpy array containing the coordinates in the principal components
+        transformed_coordinates: Numpy array (or similar) containing the
+        coordinates in the principal components
         
         labels: Array-like object containing labels for the coordinates. The labels should be in
             the same order as the rows in transformed_coordinates
