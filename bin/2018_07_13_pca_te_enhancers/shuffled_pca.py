@@ -88,10 +88,12 @@ if __name__ == "__main__":
 
         # Plot different combinations of principal components
         for combination in combinations_list:
-            
+
             component_x = combination[0] # Component on x-axis
             component_y = combination[1] # Component on y-axis
-            
+
+            print("Plotting component {} and {}".format(component_x, component_y))
+
             # Create directory if it does not exist
             directory = (_ROOT_DIR +
                          "results/2018_07_13_pca_te_enhancers/components_{}_{}/"
