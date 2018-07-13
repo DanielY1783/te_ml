@@ -1,0 +1,1 @@
+svc_grid_search contains results from from a grid search to find the best hyperparameters for a SVC run on a smaller test data set to run test version of program before sending to accre.

@@ -1,0 +1,1 @@
+local folder for results run on local machine. accre folder for results run on accre cluster.

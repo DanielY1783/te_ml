@@ -1,0 +1,17 @@
+
+Lmod is automatically replacing "Anaconda3/4.4.0" with "Python/2.7.12".
+
+
+Lmod is automatically replacing "Python/2.7.12" with "Anaconda3/4.4.0".
+
+
+Lmod is automatically replacing "Anaconda3/4.4.0" with "Python/2.7.12".
+
+
+Inactive Modules:
+  1) Anaconda3
+
+Loading required package: ggplot2
+Welcome! Related Books: `Practical Guide To Cluster Analysis in R` at https://goo.gl/13EFCZ
+/usr/spool/slurm/job28423219/slurm_script: line 12: 27372 Killed                  Rscript pca_combined.R
+slurmstepd: error: Exceeded step memory limit at some point.
