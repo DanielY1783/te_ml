@@ -1,3 +1,5 @@
+Programs are sorted based on the date written.
+
 2018_06_13: Preliminary version of random forest classifier.
 
 2018_06_25_kmer_hervs: Reformat transposable elements to remove duplicates and information
@@ -72,7 +74,5 @@ difficulty of writing unit tests (such as plots, machine learning models, etc)
 
 2018_07_13_pca_te_enhancers/pca.py
 	create_ipca: Creates incremental pca and returns transformed coordinates
-	
 	label_coordinates: Labels coordinates with labels corresponding to index
-	
 	scatterplot_pca: Creates scatter plot based on transformed coordinates.

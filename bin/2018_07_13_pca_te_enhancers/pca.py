@@ -20,7 +20,8 @@ BATCH_SIZE = None # Size of incremental pca batch to control for memory usage. C
 
 
 
-def create_ipca(features, n_components = N_COMPONENTS, batch_size = BATCH_SIZE):
+def create_ipca(features_df, n_components = N_COMPONENTS, batch_size =
+BATCH_SIZE):
     """Create an incremental pca based on a features matrix and return the transformed coordinates
     
     Keyword Arguments:
