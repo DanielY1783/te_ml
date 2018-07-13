@@ -60,6 +60,8 @@ The following modules contain components with Travis tests and can be safely reu
 Individual components within the modules are listed after the modules.
 
 2018_07_11_pca_te_enhancers/shuffled_pca.py
-	generate_combinations(elements, n = 2)
-	generate_configurations(elements, n = 2)
-
+	generate_combinations(elements, n = 2): Generate all possible combinations
+	generate_configurations(elements, n = 2): Generate all possible configurations
+	
+2018_07_12_pca_te_enhancers/reformat_df.py
+	normalize(df, length_columns, normalize): Normalize rows by length of DNA sequence
