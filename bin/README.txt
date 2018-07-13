@@ -55,13 +55,24 @@
 2018_07_12_pca_te_enhancers: Same as 2018_07_11_te_enhancers, but try vectorized operations in pandas to increase efficiency.
 
 
-TESTED MODULES
+TRAVIS TESTED MODULES
 The following modules contain components with Travis tests and can be safely reused.
 Individual components within the modules are listed after the modules.
 
 2018_07_11_pca_te_enhancers/shuffled_pca.py
-	generate_combinations(elements, n = 2): Generate all possible combinations
-	generate_configurations(elements, n = 2): Generate all possible configurations
+	generate_combinations: Generate all possible combinations
+	generate_configurations: Generate all possible configurations
 	
 2018_07_12_pca_te_enhancers/reformat_df.py
-	normalize(df, length_columns, normalize): Normalize rows by length of DNA sequence
+	normalize: Normalize rows by length of DNA sequence
+
+REUSABLE MODULES
+These modules contain the following reusable components that lack Travis tests due to
+difficulty of writing unit tests (such as plots, machine learning models, etc)
+
+2018_07_13_pca_te_enhancers/pca.py
+	create_ipca: Creates incremental pca and returns transformed coordinates
+	
+	label_coordinates: Labels coordinates with labels corresponding to index
+	
+	scatterplot_pca: Creates scatter plot based on transformed coordinates.
