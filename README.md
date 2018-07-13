@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/DanielY1783/te_ml.svg?branch=master)](https://travis-ci.org/DanielY1783/te_ml)
+
 # Machine Learning on Transposable Elements
 Machine learning models on transposable elements and their intersection with enhancers.
 
