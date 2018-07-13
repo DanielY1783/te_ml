@@ -16,7 +16,7 @@ import pandas as pd
 import reformat_df
 
 
-# In[ ]:
+# In[2]:
 
 
 def combine(file_list, axis = "index"):
@@ -38,7 +38,7 @@ def combine(file_list, axis = "index"):
     return pd.concat(frames_list, axis = axis) 
 
 
-# In[ ]:
+# In[3]:
 
 
 if __name__ == "__main__":
@@ -62,5 +62,5 @@ if __name__ == "__main__":
     
     # Save to new file
     combined_df.to_csv("/dors/capra_lab/users/yand1/te_ml/data/2018_07_11_pca_te_enhancers/shuffled_features_matrix.tsv",
-                      header = False, Index = False, sep = '\t')
+                      header = False, index = False, sep = '\t')
 
