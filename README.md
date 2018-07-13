@@ -10,6 +10,7 @@ enhancers, and HERV-enhancer overlap based on 6-mers.
 
 Data files are too large to store on Github and are on the Vanderbilt ACCRE cluster at: /dors/capra_lab/users/yand1/te_ml/data
 
-results folder added on 2018-07-13 for easier synchronizing between local machine and Vanderbilt accre cluster.
+results folder added on 2018-07-13 for easier synchronizing between local machine and Vanderbilt accre cluster. results/2018_06_21_chromehmmte folder is ignored because file within it is too large on Github and can be found on the Vanderbilt accre cluster at /dors/capra_lab/users/yand1/te_ml/results/2018_06_21_chromehmm_te
+
 
 test_requirements.txt: Provides dependencies for travis testing.
