@@ -103,9 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# Data and results folders to large
+# Data folder too large
 data
-results
 
 # R files
 *.Rhistory
