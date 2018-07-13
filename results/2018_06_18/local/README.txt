@@ -1,0 +1,2 @@
+Results from running the program at /dors/capra_lab/users/yand1/te_ml/bin/2018_06_18/local
+which oversamples the data and runs a random forest. Results are from a test set rather than the full set of data.
