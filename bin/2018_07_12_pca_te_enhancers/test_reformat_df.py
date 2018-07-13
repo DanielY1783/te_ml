@@ -2,9 +2,9 @@
 # Email: daniel.yan@vanderbilt.edu
 
 # Libaries
-import reformat_df as reformat_df
+import reformat_df
 import pandas as pd
-import pytest as pytest
+import pytest
 
 # Check that all columns can be normalized
 def test_normalize_1():
