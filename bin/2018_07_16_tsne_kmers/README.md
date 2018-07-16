@@ -1,6 +1,6 @@
-## Libraries
+## Modules
 ### pca.py 
-Module for labeling data frame.
+Module for labeling data frame and creating scatter plots
 
 ### test_pca.py
 pytests for pca.py

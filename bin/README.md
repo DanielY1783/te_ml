@@ -23,15 +23,9 @@ Random forest on full hervs with undersampling, random oversampling, SMOTE, ADAS
 ##### 2018_06_20
 Linear SVC on full hervs and SVC grid search on test hervs.
 
-##### 2018_06_21_chromehmm_te
-Reformatted version of intersection of transposable elements and transcription factors as intermediate data set.
-		
 ##### 2018_06_21_svm_grid
 Grid search for SVC on full set of hervs.
 
-##### 2018_06_22_chromehmm
-Intersection of transcription factors with transposable elements reformatting done on ACCRE cluster.
-		
 ##### 2018_06_22_svc_rbf
 SVC with RBF kernel run on full set of hervs.
 
@@ -40,6 +34,12 @@ SVC with RBF kernel run on full set of hervs.
 
 ### HERVs intersected with chromhmm enhancers using transcription factors as features. 
 This part is incomplete because project moved to using sum of 6-mers instead of transcription factors as features. Extent of progress is that file for converting data to features matrix of transcription factors was created, but not run yet
+
+##### 2018_06_21_chromehmm_te
+Reformatted version of intersection of transposable elements and transcription factors as intermediate data set.
+
+##### 2018_06_22_chromehmm
+Intersection of transcription factors with transposable elements reformatting done on ACCRE cluster.
 
 ##### 2018_06_25_chromehmm_ml_input
 Reformat intersection of tranposable elements with chromehmmm enhancers to form input data for machine learning model.
@@ -95,7 +95,7 @@ Same as previous day (*2018_07_10_pca_te_enhancers*), but try vectorized operati
 Scatterplot of top 5 components for hervs, herv-enhancer intersect, enhancers only, and control of shuffled parts of human genome.
 
 ##### 2018_07_16_tsne_kmers
-Principal component analysis to reduce features for tsne visualization on kmer counts for hervs, herv-enhancer intersect, enhancers only, and control of shuffled parts of the human genome.
+Principal component analysis to reduce features for tsne visualization on kmer counts for hervs, herv-enhancer intersect, enhancers only, and control of shuffled parts of the human genome. tsne on those dimensions.
 
 
 
