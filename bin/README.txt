@@ -7,23 +7,23 @@ Programs are sorted based on the date written.
 
 2018_06_14: Random forest run on smaller test subset of data
 
-2018_06_15: Random forest run on full set of HERVs
+2018_06_15: Random forest run on full set of hervs
 
 2018_06_18: Random forest on test subset with oversampling
 
-2018_06_19: Random forest on full HERVs with undersampling, random oversampling, SMOTE, ADASYN
+2018_06_19: Random forest on full hervs with undersampling, random oversampling, SMOTE, ADASYN
 
-2018_06_20: Linear SVC on full HERVs and SVC grid search on test HERVs.
+2018_06_20: Linear SVC on full hervs and SVC grid search on test hervs.
 
 2018_06_21_chromehmm_te: Reformatted version of intersection of transposable elements and 
 		transcription factors as intermediate data set.
 		
-2018_06_21_svm_grid: Grid search for SVC on full set of HERVs.
+2018_06_21_svm_grid: Grid search for SVC on full set of hervs.
 
 2018_06_22_chromehmm: Intersection of transcription factors with transposable elements reformatting
 		done on ACCRE cluster.
 		
-2018_06_22_svc_rbf: SVC with RBF kernel run on full set of HERVs.
+2018_06_22_svc_rbf: SVC with RBF kernel run on full set of hervs.
 
 2018_06_25_chromehmm_ml_input: Reformat intersection of tranposable elements with chromehmmm
 		enhancers to form input data for machine learning model.
@@ -36,13 +36,13 @@ Programs are sorted based on the date written.
 		
 2018_06_28_kmers_faster: Faster implementation of kmer counter from 		2018_06_27_kmer_hervs_chromehmm that works better with pandas dataframes.
 		
-2018_06_29_kmers_enhancer_intersect: Reformatting scripts for features matrix of kmers for hervs. PCA and histogram analysis on features matrix after intersection with chromehmm enhancers.
+2018_06_29_kmers_enhancer_intersect: Reformatting scripts for features matrix of kmers for hervs. pca and histogram analysis on features matrix after intersection with chromehmm enhancers.
 		
 2018_07_02_kmers_pca_rf: Principal component analysis, random forest classifier, gradient boosting classifier, and support vector classifier run on 	/dors/capra_lab/users/yand1/te_ml/data/2018_06_29_kmers_enhancers_intersect/reformatted_hervs_kmers_intersect_enhancers.tsv
 
 2018_07_03_pca_te_enhancers: Principal component analysis on kmers from transposable elements only, intersection of tranposable elements and enhancers, and enhancers only. Uses chromhmm
 	
-2018_07_05_subset_hervs: Retrain machine learning model on a smaller subset of HERVs.
+2018_07_05_subset_hervs: Retrain machine learning model on a smaller subset of hervs.
 			
 2018_07_06_genome_shuffle: Classify hervs vs random parts of the human genome
 
@@ -56,9 +56,9 @@ Programs are sorted based on the date written.
 
 2018_07_12_pca_te_enhancers: Same as 2018_07_11_te_enhancers, but try vectorized operations in pandas to increase efficiency.
 
-2018_07_13_pca_te_enhancers: Scatterplot of top 5 components for HERVs, HERV-enhancer intersect, enhancers only, and control of shuffled parts of human genome.
+2018_07_13_pca_te_enhancers: Scatterplot of top 5 components for hervs, herv-enhancer intersect, enhancers only, and control of shuffled parts of human genome.
 
-2018_07_16_tsne_kmers: PCA to reduce features for tsne visualization on kmer counts for HERVs, HERV-enhancer intersect, enhancers only, and control of shuffled parts of the human genome.
+2018_07_16_tsne_kmers: pca to reduce features for tsne visualization on kmer counts for hervs, herv-enhancer intersect, enhancers only, and control of shuffled parts of the human genome.
 
 
 TRAVIS TESTED MODULES
@@ -66,8 +66,8 @@ The following modules contain components with Travis tests and can be safely reu
 Individual components within the modules are listed after the modules.
 
 2018_07_11_pca_te_enhancers/shuffled_pca.py
-	generate_combinations: Generate all possible combinations
-	generate_configurations: Generate all possible configurations
+	generate_combinations: Generate all possible combinations from iterable
+	generate_configurations: Generate all possible configurations from iterable
 	
 2018_07_12_pca_te_enhancers/reformat_df.py
 	normalize: Normalize rows by length of DNA sequence
