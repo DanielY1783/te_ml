@@ -65,14 +65,13 @@ def label_coordinates(transformed_coordinates, labels, labels_col_name = "label"
     return transformed_df
 
 
-def scatterplot_pca(df, file_name, labels_list, colors_list, labels_col_name = "label",
+def scatterplot_cords(df, file_name, labels_list, colors_list, labels_col_name = "label",
                     figsize = (20, 20), fontsize = 30, title = "", alpha = 0.2, 
                     component_x = 1, component_y = 2, x_label = "", y_label = ""):
-    """Create a scatter plot for the PCA with different groups labeled by color and saves to file
+    """Create a scatter plot for the coordinates with different groups labeled by color and saves to file
     
     Keyword Arguments:
-        df: Pandas data frame containing coordinates of principal component 1 on column 0, coordinates
-            of principal component 2 on column 1, and labels in column 2. 
+        df: Pandas data frame containing transformed coordinates and labels as last column
             
         file_name: String name of the directory and file to save to
         
@@ -92,11 +91,11 @@ def scatterplot_pca(df, file_name, labels_list, colors_list, labels_col_name = "
         
         alpha: Alpha level for points on scatter plot (default = 0.2)
         
-        component_x: Principal component to plot on x-axis (default is 1, which is principal
-            component accounting for most variation)
+        component_x: Column number of coordinates to plot on x axis + 1 
+            (default is 1, corresponding to column 0)
             
-        component_y: Principal component to plot on y-axis (default is 2, which is principal
-            component accounting for second most variation)
+        component_y: Column number of coordinates to plot on y-axis + 1 
+            (default is 1, corresponding to column 0)
             
         x_label: String to label x-axis (default is empty string)
         
