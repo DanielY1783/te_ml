@@ -6,4 +6,4 @@ script:
 - pytest -v bin/2018_07_12_pca_te_enhancers/test_reformat_df.py
 - pytest -v bin/2018_07_13_pca_te_enhancers/test_shuffled_pca.py
 - pytest -v bin/2018_07_13_pca_te_enhancers/test_pca.py
-- pytest -v bin/2018_07_16_pca_te_enhancers/test_pca.py
+- pytest -v bin/2018_07_16_tsne_kmers/test_pca.py
