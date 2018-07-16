@@ -44,14 +44,14 @@ Error will result if any argument is invalid.
 + TSNE model is saved at *arg3*.pkl and must be loaded using scikit-learn joblib.load on a machine with the same architecture
 
 ## .slurm files (for accre scheduler)
-### pca_10_components.slurm
+#### pca_10_components.slurm
 accre job using pca_components.py to reduce data in /dors/capra_lab/users/yand1/te_ml/data/2018_07_13_pca_te_enhancers/hervs_enhancers_shuffled_features_matrix.tsv to 10 features for tsne using pca_n_components.py
 
-### pca_50_components.slurm
+#### pca_50_components.slurm
 accre job using pca_n_components.py to reduce data in /dors/capra_lab/users/yand1/te_ml/data/2018_07_13_pca_te_enhancers/hervs_enhancers_shuffled_features_matrix.tsv to 50 features for tsne using pca_n_components.py
 
-### tsne_10.slurm
+#### tsne_10.slurm
 accre job using tsne.py to create a tsne scatterplot visualization from the top 10 components 
 
-### tsne_50.slurm
+#### tsne_50.slurm
 accre job using tsne.py to create a tsne scatterplot visualization from the top 50 components
