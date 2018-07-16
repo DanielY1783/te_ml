@@ -82,7 +82,7 @@ if __name__ == "__main__":
     
     # Save the explained variances
     print("Saving explained variance...")
-    with open(variances_file) as file:
+    with open(variances_file, mode = "w+") as file:
         count = 1
         sum = 0
         # Save the explained variance for each individual component
