@@ -3,7 +3,7 @@ Directories are organized by date and into groups with a header before each grou
 
 
 
-### HERVs intersected with fantom enhancers using transcription factors as features.
+## HERVs intersected with fantom enhancers using transcription factors as features.
 
 #### 2018_06_13
 Preliminary version of random forest classifier on HERVs.
@@ -32,7 +32,7 @@ SVC with RBF kernel run on full set of hervs.
 
 
 
-### HERVs intersected with chromhmm enhancers using transcription factors as features. 
+## HERVs intersected with chromhmm enhancers using transcription factors as features. 
 This part is incomplete because project moved to using sum of 6-mers instead of transcription factors as features. Extent of progress is that file for converting data to features matrix of transcription factors was created, but not run yet
 
 #### 2018_06_21_chromehmm_te
@@ -47,7 +47,7 @@ Reformat intersection of tranposable elements with chromehmmm enhancers to form 
 
 
 	
-### HERVs intersected with chromhmm enhancers using 6-mers as features. 
+## HERVs intersected with chromhmm enhancers using 6-mers as features. 
 		
 #### 2018_06_25_kmer_hervs
 Reformat hervs data to drop transcription factors and duplicate hervs. 
