@@ -3,7 +3,7 @@ Directories are organized by date and into groups with a header before each grou
 
 
 
-### HERVs intersected with fantom enhancers using transcription factors as features.
+## HERVs intersected with fantom enhancers using transcription factors as features.
 
 #### 2018_06_14
 Random forest run on smaller test subset of data
@@ -29,7 +29,7 @@ SVC with RBF kernel run on full set of hervs.
 
 
 
-### HERVs intersected with chromhmm enhancers using transcription factors as features. 
+## HERVs intersected with chromhmm enhancers using transcription factors as features. 
 This part is incomplete because project moved to using sum of 6-mers instead of transcription factors as features. Extent of progress is that file for converting data to features matrix of transcription factors was created, but not run yet
 
 #### 2018_06_21_chromehmm_te
@@ -44,7 +44,7 @@ Reformat intersection of tranposable elements with chromehmmm enhancers to form 
 
 
 
-### HERVs intersected with chromhmm enhancers using 6-mers as features. 
+## HERVs intersected with chromhmm enhancers using 6-mers as features. 
 		
 #### 2018_06_27_kmers_hervs_chromehmm
 Standard output from accre jobs doing data reformatting at */dors/capra_lab/users/yand1/te_ml/bin/2018_06_27_kmers_hervs_chromehmm/accre*
