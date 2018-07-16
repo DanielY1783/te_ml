@@ -51,7 +51,7 @@ if __name__ == "__main__":
     # Get file to store explained variances to
     variances_file = sys.argv[4]
     # Get number of components to reduce to using PCA
-    n_components = sys.argb[5]
+    n_components = sys.argv[5]
     
     # Load in data file
     print("Loading data file...")
