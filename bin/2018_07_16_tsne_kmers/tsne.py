@@ -41,48 +41,61 @@ COLORS_LIST = ["orangered", "indigo", "limegreen", "dodgerblue"]
 
 
 if __name__ == "__main__":
-    # Get data file to process
+    # Get data file to process.
     data_file = sys.argv[1]
     # Get name of file to save scatterplot to.
     scatterplot_file = sys.argv[2]
     # Get name of file to save model to.
     model_file = sys.argv[3]
-    # Get number of components to reduce to
+    # Get number of components to reduce to.
     n_components = int(sys.argv[4])
     
-    # Load in data file
+    # Load in data file.
     print("Loading data file...")
     data_frame = pd.read_table(data_file, header = 0)
     
-    # Get labels
+    # Get labels.
     labels_df = data_frame.loc[:,"label"]
 
-    # Get features
+    # Get features.
     features_df = data_frame.drop(columns = ["label"])
     features_df = features_df.apply(pd.to_numeric)
     
     # Create tsne and transform coordinates. Use random seed of 0 for reproducibility.
     print("Calculating tsne...")
     tsne = TSNE(n_components = n_components, init = "pca", random_state = 0)
-    print(features_df)
     features_transformed = tsne.fit_transform(features_df)
     
-    # Label the transformed coordinates
+    # Label the transformed coordinates.
     transformed_df = label_coordinates(transformed_coordinates = features_transformed, 
                                        labels = labels_df)
     
-    # Get the list of unique labels
+    # Get the list of unique labels.
     labels_list = list(set(labels_df))
     
-    # Plot the transformed coordinates
+    # Plot the transformed coordinates.
     print("Creating scatterplot...")
-    scatterplot_cords(df = transformed_df, 
-                      file_name = scatterplot_file + ".png", 
-                      labels_list = labels_list,
-                      colors_list = COLORS_LIST,
-                      title = "TSNE on hervs, enhancers, herv-enhancer overlap, and control")
+    axis = scatterplot_cords(df = transformed_df, 
+                             file_name = scatterplot_file + ".png", 
+                             labels_list = labels_list,
+                             colors_list = COLORS_LIST,
+                             title = "TSNE on hervs, enhancers, herv-enhancer overlap, and control",
+                             alpha = 0.3)
     
-    # Save the tsne model
+    # Plot the different groups individually in case of overlap.
+    count = 0
+    for label in labels_list:
+        scatterplot_cords(df = transformed_df, 
+                          file_name = scatterplot_file + "_" + label + ".png",
+                          labels_list = [label],
+                          colors_list = [COLORS_LIST[count]],
+                          title = label,
+                          alpha = 0.5, 
+                          axis = axis)
+        # Increment counter for color
+        count += 1
+    
+    # Save the tsne model.
     print("Saving tsne...")
     joblib.dump(tsne, model_file + ".pkl")
 

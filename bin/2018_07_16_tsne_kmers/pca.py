@@ -53,6 +53,8 @@ def label_coordinates(transformed_coordinates, labels, labels_col_name = "label"
             
         labels_col_name: String for the name of the column containing the labels within the dataframe
             (default = "label")
+            
+        axis: List of integers specifying xmin, xmax, ymin, ymax for axes.
         
     Return: Pandas dataframe with labels inserted as the last column of transformed_coordinates
     """
@@ -67,7 +69,7 @@ def label_coordinates(transformed_coordinates, labels, labels_col_name = "label"
 
 def scatterplot_cords(df, file_name, labels_list, colors_list, labels_col_name = "label",
                     figsize = (20, 20), fontsize = 30, title = "", alpha = 0.2, 
-                    component_x = 1, component_y = 2, x_label = "", y_label = ""):
+                    component_x = 1, component_y = 2, x_label = "", y_label = "", axis = "auto"):
     """Create a scatter plot for the coordinates with different groups labeled by color and saves to file
     
     Keyword Arguments:
@@ -100,6 +102,8 @@ def scatterplot_cords(df, file_name, labels_list, colors_list, labels_col_name =
         x_label: String to label x-axis (default is empty string)
         
         y_label: String to label y-axis (default is empty string)
+    
+    Return: Axis used for plot
     """
     # Plot the pca
     plt.figure(figsize=figsize)
@@ -120,5 +124,9 @@ def scatterplot_cords(df, file_name, labels_list, colors_list, labels_col_name =
     plt.xlabel(x_label, fontsize = fontsize)
     plt.ylabel(y_label, fontsize = fontsize)
     plt.savefig(file_name)
+    plt.axis(axis)
+    # Store the axis to return
+    axes = plt.axis()
     plt.close()
+    return axes
 
