@@ -46,3 +46,5 @@ summary.docx contains a summary of the results from the different machine learni
 2018_07_12_pca_te_enhancers: Standard output from reformatting features matrix of shuffled parts of the human genome.
 
 2018_07_13_pca_te_enhancers: Principal component analysis on shuffled parts of human genome, hervs, enhancers, and intersection of hervs and enhancers.
+
+2018_07_16_tsne_kmers: Saved PCA models of principal components for dimensionality reduction for tsne.

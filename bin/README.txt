@@ -56,6 +56,10 @@ Programs are sorted based on the date written.
 
 2018_07_12_pca_te_enhancers: Same as 2018_07_11_te_enhancers, but try vectorized operations in pandas to increase efficiency.
 
+2018_07_13_pca_te_enhancers: Scatterplot of top 5 components for HERVs, HERV-enhancer intersect, enhancers only, and control of shuffled parts of human genome.
+
+2018_07_16_tsne_kmers: PCA to reduce features for tsne visualization on kmer counts for HERVs, HERV-enhancer intersect, enhancers only, and control of shuffled parts of the human genome.
+
 
 TRAVIS TESTED MODULES
 The following modules contain components with Travis tests and can be safely reused.
@@ -68,11 +72,13 @@ Individual components within the modules are listed after the modules.
 2018_07_12_pca_te_enhancers/reformat_df.py
 	normalize: Normalize rows by length of DNA sequence
 
+2018_07_13_pca_te_enhancers/pca.py	
+	label_coordinates: Labels coordinates with labels corresponding to index
+
 REUSABLE MODULES
 These modules contain the following reusable components that lack Travis tests due to
 difficulty of writing unit tests (such as plots, machine learning models, etc)
 
 2018_07_13_pca_te_enhancers/pca.py
 	create_ipca: Creates incremental pca and returns transformed coordinates
-	label_coordinates: Labels coordinates with labels corresponding to index
 	scatterplot_pca: Creates scatter plot based on transformed coordinates.
