@@ -41,7 +41,7 @@ from sklearn.externals import joblib # Save PCA model
 # In[ ]:
 
 
-if __name__ == "__main__"
+if __name__ == "__main__":
     # Get data file to process
     data_file = sys.argv[1]
     # Get file to store transformed coordinates
