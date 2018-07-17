@@ -59,6 +59,7 @@ if __name__ == "__main__":
     features_df = features_df.apply(pd.to_numeric)
 
     # Scale the data
+    print("Scaling data...")
     scaler = StandardScaler()
     features_df = scaler.fit_transform(features_df)
     
