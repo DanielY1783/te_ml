@@ -1,3 +1,4 @@
-## TSNE with perplexity 50
-Created by command *python tsne.py /dors/capra_lab/users/yand1/te_ml/data/2018_07_17_tsne_kmers/sampled_components_50.tsv /dors/capra_lab/users/yand1/te_ml/results/2018_07_17_tsne_kmers/tsne_50_perplexity_50 2 50*
+TSNE plots with different perplexities created by commmand
+python tsne.py /dors/capra_lab/users/yand1/te_ml/data/2018_07_17_tsne_kmers/sampled_components_50.tsv /dors/capra_lab/users/yand1/te_ml/results/2018_07_17_tsne_kmers/tsne_50_perplexity_*n* 2 *n*
 
+where *n* is the perplexity for the tsne hyperparameter. Each perplexity has multiple plots: one of all the labels together, and one for each label individually. 
