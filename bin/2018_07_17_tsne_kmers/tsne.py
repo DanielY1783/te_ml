@@ -42,12 +42,10 @@ if __name__ == "__main__":
     data_file = sys.argv[1]
     # Get name of file to save scatterplot to.
     scatterplot_file = sys.argv[2]
-    # Get name of file to save model to.
-    model_file = sys.argv[3]
     # Get number of components to reduce to.
-    n_components = int(sys.argv[4])
+    n_components = int(sys.argv[3])
     # Get perplexity for tsne
-    perplexity = int(sys.argv[5])
+    perplexity = int(sys.argv[4])
     
     # Load in data file with header on top row.
     print("Loading data file...")
@@ -63,7 +61,7 @@ if __name__ == "__main__":
     # Create tsne and transform coordinates. Use random seed of 0 for reproducibility.
     print("Calculating tsne...")
     tsne = TSNE(n_components = n_components, random_state = 0,
-                perplexity = perplexity, verbose=2)
+                perplexity = perplexity, verbose = 2)
     features_transformed = tsne.fit_transform(features_df)
     
     # Label the transformed coordinates.
@@ -94,8 +92,3 @@ if __name__ == "__main__":
                           axis = axis)
         # Increment counter for color
         count += 1
-    
-    # Save the tsne model.
-    print("Saving tsne...")
-    joblib.dump(tsne, model_file + ".pkl")
-
