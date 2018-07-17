@@ -13,6 +13,10 @@
 # All other columns must contain features.
 # Data file must not have indices for rows.
 #
+# Postconditions:
+# Stratified sample of data file is written to a new data file with no
+# indices. New file has tabs as separator.
+#
 # Reusable Components:
 # statified_sample(df, fraction = 0.1, label_col = "label"): Return a
 #  stratified sample from a pandas dataframe.
@@ -34,7 +38,7 @@ def stratified_sample(df, fraction = 0.1, label_col = "label"):
     labels to form groups.
     :param df: Pandas data frame to stratify subsample.
     :param fraction: Fraction size of sampled dataframe relative to df
-    (default = 0.1)
+    between 0 and 1(default = 0.1). Value larger than 1 raises exception.
     :param label_col: Name of the column with the labels (default = "label")
     :return: Pandas dataframe with a stratified sample of the original data.
     """
@@ -62,3 +66,4 @@ if __name__ == "__main__":
     sample_df = stratified_sample(data_frame, fraction=fraction_retain)
 
     # Save the sample to file
+    sample_df.to_csv(write_file, sep = '\t', index=False)

@@ -49,7 +49,7 @@ if __name__ == "__main__":
     # Get perplexity for tsne
     perplexity = int(sys.argv[5])
     
-    # Load in data file.
+    # Load in data file with header on top row.
     print("Loading data file...")
     data_frame = pd.read_table(data_file, header = 0)
     
