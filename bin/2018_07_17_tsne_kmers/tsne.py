@@ -29,7 +29,7 @@
 # Libraries
 import pandas as pd # Data
 from pca import scatterplot_cords, label_coordinates # For creating scatterplot from labeled coordinates
-from sklearn.externals import joblib # Save tsne model
+from sklearn.preprocessing import StandardScaler # Scale data
 from sklearn.manifold import TSNE
 import sys # Command line arguments
 
@@ -57,6 +57,10 @@ if __name__ == "__main__":
     # Get features.
     features_df = data_frame.drop(labels = ["label"], axis = "columns")
     features_df = features_df.apply(pd.to_numeric)
+
+    # Scale the data
+    scaler = StandardScaler()
+    features_df = scaler.fit_transform(features_df)
     
     # Create tsne and transform coordinates. Use random seed of 0 for reproducibility.
     print("Calculating tsne...")
