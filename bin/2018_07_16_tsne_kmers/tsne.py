@@ -12,10 +12,11 @@
 # Preconditions: Data file must contain one column named "label" in the header that contains labels for the data. All other columns must contain features. Data file must not have indices for rows.
 # 
 # Command Line Arguments:
-# First argument: Name of data file to read from. Include directory.
+# First argument: Name of data file to read from. Include directory and extension.
 # Second argument: Name of file to store scatterplot to. Include directory, but leave out extension 
-#     (will automatically be saved as png).
-# Third argument: Name of file to store tsne model to. Include directory without extension.
+#     (will automatically be saved as .png).
+# Third argument: Name of file to store tsne model to. Include directory, but leave out extension (will 
+#     automatically be saved as .pkl).
 # Fourth argument: Integer number of components to reduce to.
 # Error will result if any argument is invalid.
 
@@ -58,7 +59,7 @@ if __name__ == "__main__":
     labels_df = data_frame.loc[:,"label"]
 
     # Get features.
-    features_df = data_frame.drop(columns = ["label"])
+    features_df = data_frame.drop(labels = ["label"], axis = "columns")
     features_df = features_df.apply(pd.to_numeric)
     
     # Create tsne and transform coordinates. Use random seed of 0 for reproducibility.
