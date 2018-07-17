@@ -113,11 +113,11 @@ Individual components within the modules are listed after the modules.
 **2018_07_12_pca_te_enhancers/reformat_df.py**
 1. normalize: Normalize rows by length of DNA sequence
 
-**2018_07_13_pca_te_enhancers/pca.py**	
+**2018_07_17_pca_te_enhancers/pca.py**
 1. label_coordinates: Labels coordinates with labels corresponding to index
 
-
-
+**2018_07_17_pca_te_enhancers/sampling.py**
+1. stratified_sample: Stratified sampling of a pandas dataframe based on a column with labels
 
 # Reusable Modules
 These modules contain the following reusable components that lack Travis tests due to
