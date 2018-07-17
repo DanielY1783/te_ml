@@ -4,11 +4,16 @@
 # 
 # Email: daniel.yan@vanderbilt.edu
 # 
-# Description: t-distributed stochastic neighbor embedding analysis on data with scatter plot visualization. 
+# Description: t-distributed stochastic neighbor embedding analysis on
+#               data with scatter plot visualization.
 # 
-# Preconditions: Data file must contain one column named "label" in the header that contains labels for the data.
-#       All other columns must contain features.
-#       Data file must not have indices for rows.
+# Preconditions:
+# Data file must contain one column named "label" in the header
+#  that contains labels for the data.
+# All other columns must contain features.
+# Data file must not have indices for rows.
+# Note: tsne is memory intensive and memory error may result on large
+#  files. Fix this by passing a smaller file.
 # 
 # Command Line Arguments:
 # First argument: Name of data file to read from. Include directory and extension.
