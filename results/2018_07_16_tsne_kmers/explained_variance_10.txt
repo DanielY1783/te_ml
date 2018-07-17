@@ -1,0 +1,11 @@
+Explained Variance Ratio for Component 1: 2.2691024457305744%
+Explained Variance Ratio for Component 2: 2.2032350761789417%
+Explained Variance Ratio for Component 3: 1.3623198830410252%
+Explained Variance Ratio for Component 4: 0.7750606436145084%
+Explained Variance Ratio for Component 5: 0.6683749189587793%
+Explained Variance Ratio for Component 6: 0.5660272321484641%
+Explained Variance Ratio for Component 7: 0.45778261613565446%
+Explained Variance Ratio for Component 8: 0.3548092324934326%
+Explained Variance Ratio for Component 9: 0.27879380358378236%
+Explained Variance Ratio for Component 10: 0.2542657168408546%
+Total explained ratio: 9.189771568726018%

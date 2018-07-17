@@ -86,7 +86,7 @@ Standard output from reformatting features matrix of shuffled parts of the human
 Continued from *2018_07_11_pca_te_enhancers*. Principal component analysis on shuffled parts of human genome, hervs, enhancers, and intersection of hervs and enhancers.
 
 #### 2018_07_16_tsne_kmers
-Saved pca models and explained variance ratios of principal components for dimensionality reduction for tsne. tsne scatterplots.
+Saved pca models and explained variance ratios of principal components for dimensionality reduction for tsne.
 
 
 # Individual Files

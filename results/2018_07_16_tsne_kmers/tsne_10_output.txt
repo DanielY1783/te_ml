@@ -1,0 +1,18 @@
+Loading data file...
+Calculating tsne...
+Traceback (most recent call last):
+  File "tsne.py", line 68, in <module>
+    features_transformed = tsne.fit_transform(features_df)
+  File "/opt/easybuild/software/Core/Anaconda3/4.4.0/lib/python3.6/site-packages/sklearn/manifold/t_sne.py", line 884, in fit_transform
+    embedding = self._fit(X)
+  File "/opt/easybuild/software/Core/Anaconda3/4.4.0/lib/python3.6/site-packages/sklearn/manifold/t_sne.py", line 730, in _fit
+    squared=True)
+  File "/opt/easybuild/software/Core/Anaconda3/4.4.0/lib/python3.6/site-packages/sklearn/metrics/pairwise.py", line 1240, in pairwise_distances
+    return _parallel_pairwise(X, Y, func, n_jobs, **kwds)
+  File "/opt/easybuild/software/Core/Anaconda3/4.4.0/lib/python3.6/site-packages/sklearn/metrics/pairwise.py", line 1083, in _parallel_pairwise
+    return func(X, Y, **kwds)
+  File "/opt/easybuild/software/Core/Anaconda3/4.4.0/lib/python3.6/site-packages/sklearn/metrics/pairwise.py", line 245, in euclidean_distances
+    distances = safe_sparse_dot(X, Y.T, dense_output=True)
+  File "/opt/easybuild/software/Core/Anaconda3/4.4.0/lib/python3.6/site-packages/sklearn/utils/extmath.py", line 189, in safe_sparse_dot
+    return fast_dot(a, b)
+MemoryError
