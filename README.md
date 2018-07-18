@@ -5,6 +5,9 @@
 ## Overview
 This project analyzes the overlap of transposable elements and enhancers within the human genome using various machine learning algorithms such as random forest, svm, and tsne, as well as dimensionality reduction with pca.
 
+## Documentation Details
+Many README files will refer to pile paths on the Vanderbilt accre cluster, which will start with */dors/capra_lab/users/yand1/te_ml/*. For the purpose of finding files within this Github repository, consider */dors/capra_lab/users/yand1/te_ml/* as equivalent to the root directory of this Github repository.
+
 ## Source Files
 Source files are in the bin folder, which contains directories corresponding to the creation date of different files. Detailed documentation is inside the bin folder.
 
