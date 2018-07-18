@@ -1,16 +1,24 @@
 [![Build Status](https://travis-ci.org/DanielY1783/te_ml.svg?branch=master)](https://travis-ci.org/DanielY1783/te_ml)
 
-# Machine Learning on Transposable Elements
-Machine learning models on transposable elements and their intersection with enhancers.
+# Machine Learning Analysis on Human Genome Transposable Elements
 
-Includes random forest classifier and support vector classifier to predict HERV overlap with fantom enhancers based on transcription 
-factors, random forest classifier and gradient boosted decision trees to predict HERV overlap with chromhmm enhancers based
-on 6-mers, random forest classifer for HERVs vs generic parts of the human genome as baseline, and principal component analysis on HERVs,
-enhancers, and HERV-enhancer overlap based on 6-mers.
+## Overview
+This project analyzes the overlap of transposable elements and enhancers within the human genome using various machine learning algorithms such as random forest, svm, and tsne, as well as dimensionality reduction with pca.
 
-Data files are too large to store on Github and are on the Vanderbilt ACCRE cluster at: /dors/capra_lab/users/yand1/te_ml/data
+## Source Files
+Source files are in the bin folder, which contains directories corresponding to the creation date of different files. Detailed documentation is inside the bin folder.
 
-results folder added on 2018-07-13 for easier synchronizing between local machine and Vanderbilt accre cluster. results/2018_06_21_chromehmmte folder is ignored because file within it is too large on Github and can be found on the Vanderbilt accre cluster at /dors/capra_lab/users/yand1/te_ml/results/2018_06_21_chromehmm_te
+## Data
+The data files are too large to store on Github and are on the Vanderbilt ACCRE cluster at
 
+*/dors/capra_lab/users/yand1/te_ml/data*
 
-test_requirements.txt: Provides dependencies for travis testing.
+## Results
+The results folder was added on 2018-07-13 for easier synchronizing between local machine and Vanderbilt accre cluster. More detailed documentation is inside the results folder.
+
+#### Note
+*results/2018_06_21_chromehmm_te folder* 
+
+is ignored due to large file sizes but is on the Vanderbilt accre cluster at 
+
+*/dors/capra_lab/users/yand1/te_ml/results/2018_06_21_chromehmm_te*
