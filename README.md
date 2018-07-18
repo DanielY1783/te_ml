@@ -18,5 +18,5 @@ The results folder was added on 2018-07-13 for easier synchronizing between loca
 
 #### Note
 *results/2018_06_21_chromehmm_te folder* 
-is ignored due to large file sizes but is on the Vanderbilt accre cluster at 
+is ignored due to large size of file within the folder, but is on the Vanderbilt accre cluster at 
 */dors/capra_lab/users/yand1/te_ml/results/2018_06_21_chromehmm_te*
