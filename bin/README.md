@@ -129,3 +129,8 @@ difficulty of writing unit tests (such as plots, machine learning models, etc)
 **2018_07_13_pca_te_enhancers/pca.py**
 1. create_ipca: Creates incremental pca and returns transformed coordinates
 2. scatterplot_pca: Creates scatter plot based on transformed coordinates.
+
+**2018_07_18_tf_chromhmm/ml_predict.py**
+1. predict_model: Wrapper for generating and saving cross validation and predictions from scikit learn model.
+2. cross_validation: Wrapper for generating and printing cross validation only from scikit learn model.
+3. predictions: Wrapper for generating and saving prediction metrics only from scikit learn model.
