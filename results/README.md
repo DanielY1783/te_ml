@@ -2,7 +2,6 @@
 Directories are organized by date and into groups with a header before each group of related directories.
 
 
-
 ## HERVs intersected with fantom enhancers using transcription factors as features.
 
 **2018_06_14**
@@ -90,6 +89,9 @@ Saved pca models and explained variance ratios of principal components for dimen
 
 **2018_07_17_tsne_kmers**
 TSNE scatterplots from top 50 principal components on shuffled parts of human genome, hervs, enhancers, and intersection of hervs and enhancers.
+
+**2018_07_18_rf_enhancers_hervs_shuffled**
+Results from random forest on shuffled parts of human genome, hervs, enhancers, and intersection herv-enhancer intersection.
 
 # Individual Files
 **summary.docx**
