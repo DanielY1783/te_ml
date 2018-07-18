@@ -60,8 +60,8 @@ if __name__ == '__main__':
 
     # Grid search on training set for random forest model.
     print("Starting grid search")
-    parameters = {"max_features": ["sqrt", "log2", None],
-                  "max_depth": [None, 5, 10, 25, 50, 75, 100]}
+    parameters = {"max_features": ["sqrt", None],
+                  "max_depth": [None, 5, 50, 100]}
     model = GridSearchCV(RandomForestClassifier(n_estimators=1000, n_jobs=-1),
                          param_grid=parameters, n_jobs=-1, scoring="f1_macro",
                          cv=CV)
