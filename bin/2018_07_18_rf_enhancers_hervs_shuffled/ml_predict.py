@@ -9,7 +9,6 @@
 
 
 # Import needed libraries
-import numpy as np  # Write confusion matrix
 import pandas as pd  # For writing results
 from sklearn import metrics  # Get model metrics
 from sklearn.model_selection import cross_val_score  # Cross validation
