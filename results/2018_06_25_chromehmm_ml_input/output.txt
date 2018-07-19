@@ -1,2 +1,0 @@
-/usr/spool/slurm/job28198548/slurm_script: line 11: 176135 Killed                  python convert_chromehmm_ml_input.py
-slurmstepd: error: Exceeded step memory limit at some point.
