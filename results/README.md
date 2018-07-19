@@ -57,7 +57,7 @@ Standard output from accre jobs doing kmer counts at */dors/capra_lab/users/yand
 Histogram of kmer distribution within hervs.
 
 **2018_07_02_kmers_pca_rf**
-Principal component analysis, random forest, gradient boosting with decision trees, and support vector classifier
+Principal component analysis, random forest, gradient boosting with decision trees, and support vector classifier on herv overlap with chromhmm enhancers using transcription factors as features. Support vector classifier timed out, so no results from that.
 		
 **2018_07_03_pca_te_enhancers**
 Principal component analysis on kmers from tranposable elements that don't overlap an enhancer, enhancers, and overlap of enhancers and tranposable elements.
