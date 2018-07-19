@@ -56,7 +56,7 @@ if __name__ == '__main__':
     print("Creating random forest classifier")
     model = RandomForestClassifier(random_state=0)
 
-    # Predict results using best model
+    # Predict results using model
     print("Generating predictions")
     ml_predict.predict_model(x_train=x_train, x_test=x_test, y_train=y_train,
                              y_test=y_test, model=model,
