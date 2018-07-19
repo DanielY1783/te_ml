@@ -52,10 +52,9 @@ if __name__ == '__main__':
     # Train test split
     x_train, x_test, y_train, y_test = train_test_split(x_df, y_df)
 
-    # Grid search on training set for random forest model. n_jobs=-1 for
-    # parallel computation
-    print("Starting grid search")
-    model = RandomForestClassifier(n_jobs=-1, random_state=0)
+    # Create random forest classifier
+    print("Creating random forest classifier")
+    model = RandomForestClassifier(random_state=0)
 
     # Predict results using best model
     print("Generating predictions")
