@@ -43,6 +43,9 @@ Intersection of transcription factors with transposable elements reformatting do
 
 **2018_06_25_chromehmm_ml_input**
 Reformat intersection of tranposable elements with chromehmmm enhancers to form input data for machine learning model.
+
+**2018_07_18_tf_chromhmm**
+Random forest classifier of transposable element overlap (all transposable elements) with chromhmm enhancers.
 	
 
 
