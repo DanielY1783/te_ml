@@ -1,2 +1,0 @@
-Best params: {'max_depth': 50, 'max_features': None}
-Best score: 0.44244644244644243
