@@ -28,8 +28,8 @@ SVC with RBF kernel run on full set of hervs.
 
 
 
-## HERVs intersected with chromhmm enhancers using transcription factors as features. 
-This part is incomplete because project moved to using sum of 6-mers instead of transcription factors as features. Extent of progress is that file for converting data to features matrix of transcription factors was created, but not run yet
+## Transposable Elements intersected with chromhmm enhancers using transcription factors as features. 
+Use all transposable elements instead of HERVs subset, and use chromhmm definition of enhancers. Predict transposable element overlap with enhancers based on transcription factors as features. 
 
 **2018_06_21_chromehmm_te**
 Reformatted version of intersection of transposable elements and transcription factors as intermediate data set.
@@ -40,6 +40,8 @@ Intersection of transcription factors with transposable elements. Reformatting d
 **2018_06_25_chromehmm_ml_input**
 Reformat intersection of tranposable elements with chromehmmm enhancers to form input data for machine learning model.
 
+**2018_07_18_tf_chromhmm**
+Metrics from random forest classifier prediction of transposable element overlap (all transposable elements) with chromhmm enhancers.
 
 
 
