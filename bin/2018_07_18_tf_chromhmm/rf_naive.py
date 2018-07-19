@@ -2,9 +2,9 @@
 #
 # Email: daniel.yan@vanderbilt.edu
 #
-# Date: 2018-07-18
+# Date: 2018-07-19
 #
-# Description: Grid search on random forest classifier of enhancers overlap
+# Description: Random forest classifier of enhancers overlap
 # with transposable elements based on transcription factors as features. 0
 # represents no overlap; 1 represents overlap in labels.
 #
@@ -18,8 +18,8 @@
 # 2. Labels data file must not include a header.
 #
 # Postconditions:
-# Files containing predictions from the best random forest classifier after a
-# grid search are written to the directory passed as third parameter.
+# Files containing predictions from the random forest classifier
+# are written to the directory passed as third parameter.
 
 
 # Libraries
@@ -52,19 +52,10 @@ if __name__ == '__main__':
     # Train test split
     x_train, x_test, y_train, y_test = train_test_split(x_df, y_df)
 
-    # Grid search on training set for random forest model.
+    # Grid search on training set for random forest model. n_jobs=-1 for
+    # parallel computation
     print("Starting grid search")
-    parameters = {"max_features": ["sqrt", None],
-                  "max_depth": [None, 5, 50, 100]}
-    model = GridSearchCV(RandomForestClassifier(n_estimators=1000, n_jobs=-1),
-                         param_grid=parameters, n_jobs=-1, scoring="f1_macro",
-                         cv=CV)
-    model.fit(x_train, y_train)
-
-    # Print out the best model
-    with open(output_directory + "best_model.txt", mode="w+") as file:
-        file.write("Best params: " + str(model.best_params_) + '\n')
-        file.write("Best score: " + str(model.best_score_) + '\n')
+    model = RandomForestClassifier(n_jobs=-1, random_state=0)
 
     # Predict results using best model
     print("Generating predictions")
