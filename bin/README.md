@@ -47,7 +47,9 @@ Reformat intersection of tranposable elements with chromehmmm enhancers to form 
 **2018_07_18_tf_chromhmm**
 Random forest classifier of transposable element overlap (all transposable elements) with chromhmm enhancers.
 	
-
+**2018_07_19_tf_chromhmm**
+Random forest classifier of transposable element overlap (all transposable elements) with chromhmm enhancers with weights assigned.
+	
 
 	
 ## HERVs intersected with chromhmm enhancers using 6-mers as features. 
@@ -133,7 +135,7 @@ difficulty of writing unit tests (such as plots, machine learning models, etc)
 1. create_ipca: Creates incremental pca and returns transformed coordinates
 2. scatterplot_pca: Creates scatter plot based on transformed coordinates.
 
-**2018_07_18_tf_chromhmm/ml_predict.py**
-1. predict_model: Wrapper for generating and saving cross validation and predictions from scikit learn model.
+**2018_07_19_tf_chromhmm/ml_predict.py**
+1. all_steps: Wrapper for generating and saving cross validation and predictions from scikit learn model.
 2. cross_validation: Wrapper for generating and printing cross validation only from scikit learn model.
 3. predictions: Wrapper for generating and saving prediction metrics only from scikit learn model.
