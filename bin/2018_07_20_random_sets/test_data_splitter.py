@@ -32,4 +32,10 @@ def test_split_data_2():
     assert df_split[0].equals(df0)
     assert df_split[1].equals(df1)
 
-test_split_data_2()
+
+def test_split_data_3():
+    dict = {"col 0": [1, 2, 3], "col 1": [5, 20, 15], "col 2": [100, 200, 300],
+            "label": ["label 1", "label 2", "label 3"]}
+    df = pd.DataFrame(data=dict)
+    df_split = data_splitter.split_data(df, splits=0)
+    assert df_split == []
