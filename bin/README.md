@@ -144,3 +144,7 @@ difficulty of writing unit tests (such as plots, machine learning models, etc)
 1. all_steps: Wrapper for generating and saving cross validation and predictions from scikit learn model.
 2. cross_validation: Wrapper for generating and printing cross validation only from scikit learn model.
 3. predictions: Wrapper for generating and saving prediction metrics only from scikit learn model.
+
+**2018_07_20_random_sets**
+1. split_files: Split a file containing a large data frame into smaller dataframes stored in separate files.
+2. split_data: Split a pandas dataframe into smaller data frames and return as a list of the smaller data frames.
