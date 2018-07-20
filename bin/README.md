@@ -132,6 +132,9 @@ Individual components within the modules are listed after the modules.
 **2018_07_17_pca_te_enhancers/sampling.py**
 1. stratified_sample: Stratified sampling of a pandas dataframe based on a column with labels
 
+**2018_07_20_random_sets**
+1. split_data: Split a pandas dataframe into smaller data frames and return as a list of the smaller data frames.
+
 # Reusable Modules
 These modules contain the following reusable components that lack Travis tests due to
 difficulty of writing unit tests (such as plots, machine learning models, etc)
@@ -147,4 +150,3 @@ difficulty of writing unit tests (such as plots, machine learning models, etc)
 
 **2018_07_20_random_sets**
 1. split_files: Split a file containing a large data frame into smaller dataframes stored in separate files.
-2. split_data: Split a pandas dataframe into smaller data frames and return as a list of the smaller data frames.
