@@ -111,6 +111,8 @@ Same as previous day, but add script for stratified sampling of data to deal wit
 **2018_07_18_rf_enhancers_hervs_shuffled**
 Random forest classifier of hervs, herv-enhancer intersect, enhancers, and shuffled parts of the human genome.
 
+**2018_07_20_random_sets**
+Add random sets length matched to herv-enhancer overlap and enhancers to the original random set that was length matched to hervs
 
 
 # Travis Tested Modules
