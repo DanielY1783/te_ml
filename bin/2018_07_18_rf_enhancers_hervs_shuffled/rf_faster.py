@@ -30,12 +30,10 @@
 import ml_predict  # Wrappers for scikit learn machine learning models
 import pandas as pd  # Data manipulation
 from sklearn.ensemble import RandomForestClassifier  # Random forest
-from sklearn.model_selection import GridSearchCV  # Grid search
 from sklearn.model_selection import train_test_split  # For data splitting
 import sys  # Command line arguments
 
 # Constants
-CV = 10  # Cross validation folds
 FIRST_FEATURE = "aaaaaa"  # Name of column with first feature
 LAST_FEATURE = "tttttt"  # Name of column with last feature
 
@@ -62,7 +60,7 @@ if __name__ == '__main__':
     print("Creating random forest model")
     model = RandomForestClassifier(random_state=0, max_depth=25)
 
-    # Predict results using best model
+    # Predict results using model
     print("Generating predictions")
     ml_predict.predictions(x_train=x_train, x_test=x_test, y_train=y_train,
                              y_test=y_test, model=model,
