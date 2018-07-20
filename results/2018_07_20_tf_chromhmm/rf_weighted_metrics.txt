@@ -1,0 +1,9 @@
+             precision    recall  f1-score   support
+
+          0       0.79      0.92      0.85    957376
+          1       0.30      0.12      0.18    268707
+
+avg / total       0.68      0.75      0.70   1226083
+
+Precision-Recall AUC: 0.273370475852582
+ROC AUC: 0.5734903189718856
