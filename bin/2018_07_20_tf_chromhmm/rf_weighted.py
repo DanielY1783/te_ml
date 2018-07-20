@@ -2,12 +2,12 @@
 #
 # Email: daniel.yan@vanderbilt.edu
 #
-# Date: 2018-07-19
+# Date: 2018-07-20
 #
 # Description: Random forest classifier of enhancers overlap
 # with transposable elements based on transcription factors as features. 0
-# represents no overlap; 1 represents overlap in labels. Add custom weights
-# to try to prevent classifier from predicting too many negatives.
+# represents no overlap; 1 represents overlap in labels. Add balanced weights
+#  to try to prevent classifier from predicting too many negatives.
 #
 # Command Line Arguments:
 # 1. Name of data file with features, including directory and extension.
@@ -34,7 +34,7 @@ import sys  # Command line arguments
 
 # Constants
 CV = 10  # Cross validation folds
-WEIGHTS ={0: 1, 1: 10000000} # Class weights for penalization
+WEIGHTS ="balanced" # Class weights for penalization
 
 if __name__ == '__main__':
     # Read in name of features file

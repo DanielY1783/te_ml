@@ -48,8 +48,11 @@ Reformat intersection of tranposable elements with chromehmmm enhancers to form 
 Random forest classifier of transposable element overlap (all transposable elements) with chromhmm enhancers.
 	
 **2018_07_19_tf_chromhmm**
-Random forest classifier of transposable element overlap (all transposable elements) with chromhmm enhancers with weights assigned.
-	
+Random forest classifier of transposable element overlap (all transposable elements) with chromhmm enhancers with weights assigned as {0: 1, 1: 10000000}.
+
+**2018_07_20_tf_chromhmm**
+Random forest classifier of transposable element overlap (all transposable elements) with chromhmm enhancers with weights assigned as "balanced.	
+
 
 	
 ## HERVs intersected with chromhmm enhancers using 6-mers as features. 
