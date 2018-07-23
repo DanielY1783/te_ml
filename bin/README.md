@@ -114,7 +114,7 @@ Random forest classifier of hervs, herv-enhancer intersect, enhancers, and shuff
 **2018_07_20_random_sets**
 Add random sets length matched to herv-enhancer overlap and enhancers to the original random set that was length matched to hervs. File for splitting up random sets into multiple files for easier processing.
 
-**2018_07_20_random_sets**
+**2018_07_23_random_sets**
 Add random sets length matched to herv-enhancer overlap and enhancers to the original random set that was length matched to hervs. Files for counting 6-mers.
 
 
