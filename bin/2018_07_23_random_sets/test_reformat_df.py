@@ -35,10 +35,7 @@ def test_normalize_2():
     df_2 = pd.DataFrame(data=dict_2)
 
     with pytest.raises(Exception):
-        reformat_df.normalize(df_1, 4, [0, 1, 3])
-
-    with pytest.raises(Exception):
-        reformat_df.normalize(df_1, 2, [0, 1, 4])
+        reformat_df.normalize(df_2, 4, [0, 1, 3])
 
 # Check that one column can be normalized while others are not
 def test_normalize_3():
@@ -60,3 +57,14 @@ def test_normalize_3():
     assert df_3.equals(df_3_normalized)
 
 
+# Check that exception is thrown for invalid column
+def test_normalize_4():
+    # Create pandas dataframe for testing
+    dict_4 = {"col 0": [1, 2, None],
+              "col 1": [5, 20, 15],
+              "col 2": ["", "tg", "ctatg"],
+              "col 3": [100, 200, 300]}
+    df_4 = pd.DataFrame(data=dict_4)
+
+    with pytest.raises(Exception):
+        reformat_df.normalize(df_4, 4, [0, 1, 3])

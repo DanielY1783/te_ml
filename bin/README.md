@@ -125,9 +125,6 @@ Individual components within the modules are listed after the modules.
 **2018_07_11_pca_te_enhancers/shuffled_pca.py**
 1. generate_combinations: Generate all possible combinations from iterable
 2. generate_configurations: Generate all possible configurations from iterable
-	
-**2018_07_12_pca_te_enhancers/reformat_df.py**
-1. normalize: Normalize rows by length of DNA sequence
 
 **2018_07_17_tsne_kmers/pca.py**
 1. label_coordinates: Labels coordinates with labels corresponding to index
@@ -137,6 +134,9 @@ Individual components within the modules are listed after the modules.
 
 **2018_07_20_random_sets/data_splitter.py**
 1. split_data: Split a pandas dataframe into smaller data frames and return as a list of the smaller data frames.
+
+**2018_07_23_random_sets/reformat_df.py**
+1. normalize: Normalize rows by length of DNA sequence
 
 **2018_07_23_random_sets/kmer_counter_batch.py**
 1. generate_kmers: Generate all configurations of a certain length of k-mer.
