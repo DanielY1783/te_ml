@@ -57,3 +57,13 @@ def test_count_kmers_1():
     df = kmer_counter_batch.count_kmers(df)
     kmer_counter_batch.k = 6  # Set k back to 6
     assert df.equals(df_counted)
+
+# Test that invalid value for base pairs raises an exception.
+def test_count_kmers_2():
+    dict = {"chr": ["chr1", "chr2"], "start": [1235, 4325], "end": [1465, 4562],
+            "label": ["random_enhancers", "random_herv_enhancer_intersect"],
+            "pairs": [True, False], "aa": [0, 0], "at": [0, 0],
+            "ta": [0, 0], "tt": [0, 0]}
+    df = pd.DataFrame(data=dict)
+    with pytest.raises(Exception):
+            kmer_counter_batch.count_kmers(df)

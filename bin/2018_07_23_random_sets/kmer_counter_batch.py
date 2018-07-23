@@ -24,11 +24,11 @@ import sys  # For getting name of data file as command line argument
 DIRECTORY = "/dors/capra_lab/users/yand1/te_ml/"  # Root directory for project
 DATE_DIR = "2018_07_06_genome_shuffle/"  # Directory corresponding to date
 k = 6  # Length of "k" value for k-mer
-chr_col = 0  # Column of chromosome of herv in data file
-start_col = 1  # Column of start location of herv in data file
-end_col = 2  # Column of end location of herv in data file
-label_col = 3  # Label for column
-pairs_col = 4  # Column with string of actual pairs within herv
+chr_col = 0  # Column with chromosome location
+start_col = 1  # Column  start location
+end_col = 2  # Column of end location
+label_col = 3  # Column with labels
+pairs_col = 4  # Column with string of base pairs
 
 
 def generate_kmers(alphabet="acgt", k=k):
@@ -60,15 +60,11 @@ def count_kmers(features_df):
 
 
 def parse_pairs(row):
-    """Counts the repetitions of each k-mer within the row.
-    
-    Args:
-        row(pd.Series): Single row representing a HERV to parse for the
-        number of each k-mer.
-
-    Return: 
-        row(pd.Series): Row that is updated with count of each k-mer within
-        the HERV.
+    """
+    Count the sequence in the row for kmers and update counts of kmers
+    :param row: Row to count. Must contain columns of 0's for all kmers. Any
+    kmers that do not have a corresponding column name will not be counted.
+    :return: Row with kmer counts updated in corresponding columns.
     """
     # Get base pairs in current row
     pairs = row[pairs_col].lower()
@@ -83,23 +79,25 @@ def parse_pairs(row):
             row.loc[kmer] += 1
     return row
 
-def count_file():
-    pass
 
-
-if __name__ == '__main__':
-    # Get name of data file to process from command line.
-    data_file = sys.argv[1]
-    # Get name of file to write to from command line.
-    write_file = sys.argv[2]
-
+def count_file(input_file, output_file, input_header=None,
+               output_header=False, sep = '\t'):
+    """
+    Wrapper for counting all kmers in a table of base pairs stored in a file.
+    :param input_file: File containing data table. Columns in file should
+    correspond to the variables chr_col, start_col, end_col, labels_col,
+    pairs_col in this module.
+    :param output_file: File to write table with updated kmer counts.
+    :param input_header: Row of header in input_file (default=None)
+    :param output_header: Whether to write header in output_file(default=False)
+    :param sep: Separator for table in output_file(default='\t)
+    :return: None
+    """
     # Read in file as pandas dataframe
-    hervs_df = pd.read_table(
-        DIRECTORY + "data/" + DATE_DIR + "batch_input/" + data_file,
-        header=None)
+    input_df = pd.read_table(input_file, header=input_header)
 
     # Rename columns
-    hervs_df = hervs_df.rename(
+    input_df = input_df.rename(
         columns={chr_col: "chr", start_col: "start", end_col: "end",
                  label_col: "label", pairs_col: "pairs"})
 
@@ -107,19 +105,24 @@ if __name__ == '__main__':
     kmers_list = generate_kmers()
 
     # Create features matrix with columns as the different kmers
-    features_df = hervs_df.reindex(
-        columns=(hervs_df.columns.tolist() + kmers_list), fill_value=0)
+    features_df = input_df.reindex(
+        columns=(input_df.columns.tolist() + kmers_list), fill_value=0)
 
-    # Update the features matrix by going through all the base pair strings
-    # and counting
-    # how many times each k-mer appears.
+    # Update the features data frame.
     features_df = count_kmers(features_df=features_df)
 
     # Normalize features matrix by dividing by length of sequence.
     normalize(features_df, features_df.loc[:, "pairs"],
               features_df.loc[:, "aaaaaa":"tttttt"])
 
-    # Save to file
-    features_df.to_csv(
-        DIRECTORY + "data/" + DATE_DIR + "batch_output/" + write_file, sep='\t',
-        index=False)
+    # Save to output file
+    features_df.to_csv(output_file, header=output_header, sep=sep)
+
+if __name__ == '__main__':
+    # Get name of data file to process from command line.
+    data_file = sys.argv[1]
+    # Get name of file to write to from command line.
+    write_file = sys.argv[2]
+
+    # Count kmers in input file and store to output file
+    count_file(input_file=data_file, output_file=write_file)
