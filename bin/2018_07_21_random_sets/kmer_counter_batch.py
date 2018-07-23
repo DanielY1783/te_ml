@@ -25,15 +25,16 @@ PAIRS = 4  # Column with string of actual pairs within herv
 ALPHABET = "acgt"  # Alphabet of base pairs in k-mers
 
 
-def generate_combinations():
-    """Return all combinations of k-mers in alphabet to use as features.
-    
-    Return: 
-        kmers_list(list): List that contains strings of all possible k-mers
-        from the given "k" value and alphabet
+def generate_kmers(alphabet = "acgt", k = 6):
+    """
+    Generate and return all k-mer from an alphabet.
+    :param alphabet: String containing alphabet to generate kmers from.
+    Should not contain repeats.
+    :param n: Integer length of the kmer
+    :return: List containing all kmers.
     """
     # Use product to generate iterator that contains all k-mers
-    kmers_iter = product(ALPHABET, repeat=K)
+    kmers_iter = product(alphabet, repeat=k)
     # Join all the characters to form a list of strings
     kmers_list = [''.join(i) for i in kmers_iter]
     return kmers_list

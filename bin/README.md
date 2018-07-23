@@ -138,6 +138,8 @@ Individual components within the modules are listed after the modules.
 **2018_07_20_random_sets/data_splitter.py**
 1. split_data: Split a pandas dataframe into smaller data frames and return as a list of the smaller data frames.
 
+**2018_07_23_random_sets/kmer_counter_batch.py**
+1. generate_kmers: Generate all configurations of a certain length of k-mer.
 
 
 # Reusable Modules
