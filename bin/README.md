@@ -112,7 +112,7 @@ Same as previous day, but add script for stratified sampling of data to deal wit
 Random forest classifier of hervs, herv-enhancer intersect, enhancers, and shuffled parts of the human genome.
 
 **2018_07_20_random_sets**
-Add random sets length matched to herv-enhancer overlap and enhancers to the original random set that was length matched to hervs
+Add random sets length matched to herv-enhancer overlap and enhancers to the original random set that was length matched to hervs. File for splitting up random sets into multiple files for easier processing.
 
 
 # Travis Tested Modules
@@ -132,7 +132,7 @@ Individual components within the modules are listed after the modules.
 **2018_07_17_pca_te_enhancers/sampling.py**
 1. stratified_sample: Stratified sampling of a pandas dataframe based on a column with labels
 
-**2018_07_20_random_sets**
+**2018_07_20_random_sets/data_splitter.py**
 1. split_data: Split a pandas dataframe into smaller data frames and return as a list of the smaller data frames.
 
 # Reusable Modules
@@ -148,5 +148,5 @@ difficulty of writing unit tests (such as plots, machine learning models, etc)
 2. cross_validation: Wrapper for generating and printing cross validation only from scikit learn model.
 3. predictions: Wrapper for generating and saving prediction metrics only from scikit learn model.
 
-**2018_07_20_random_sets**
+**2018_07_20_random_sets/data_splitter.py**
 1. split_files: Split a file containing a large data frame into smaller dataframes stored in separate files.
