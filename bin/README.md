@@ -129,22 +129,24 @@ Individual components within the modules are listed after the modules.
 **2018_07_12_pca_te_enhancers/reformat_df.py**
 1. normalize: Normalize rows by length of DNA sequence
 
-**2018_07_17_pca_te_enhancers/pca.py**
+**2018_07_17_tsne_kmers/pca.py**
 1. label_coordinates: Labels coordinates with labels corresponding to index
 
-**2018_07_17_pca_te_enhancers/sampling.py**
+**2018_07_17_tsne_kmers/sampling.py**
 1. stratified_sample: Stratified sampling of a pandas dataframe based on a column with labels
 
 **2018_07_20_random_sets/data_splitter.py**
 1. split_data: Split a pandas dataframe into smaller data frames and return as a list of the smaller data frames.
 
+
+
 # Reusable Modules
 These modules contain the following reusable components that lack Travis tests due to
 difficulty of writing unit tests (such as plots, machine learning models, etc)
 
-**2018_07_13_pca_te_enhancers/pca.py**
+**2018_07_17_tsne_kmers/scatterplot_cords.py**
 1. create_ipca: Creates incremental pca and returns transformed coordinates
-2. scatterplot_pca: Creates scatter plot based on transformed coordinates.
+2. scatterplot_pca: Creates scatter plot based on x-y coordinates in two columns.
 
 **2018_07_19_tf_chromhmm/ml_predict.py**
 1. all_steps: Wrapper for generating and saving cross validation and predictions from scikit learn model.
