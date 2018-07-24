@@ -99,6 +99,11 @@ TSNE scatterplots from top 50 principal components on shuffled parts of human ge
 **2018_07_18_rf_enhancers_hervs_shuffled**
 Results from random forest on shuffled parts of human genome, hervs, enhancers, and intersection herv-enhancer intersection.
 
+**2018_07_23_random_sets**
+Standard output from formatting of new length matched random sets created by accre job at 
+*/dors/capra_lab/users/yand1/te_ml/bin/2018_07_23_random_sets/kmer_counter_batch.slurm*
+
+
 
 # Individual Files
 **summary.docx**
