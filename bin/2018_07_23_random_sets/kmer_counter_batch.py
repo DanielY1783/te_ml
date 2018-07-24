@@ -111,9 +111,13 @@ def count_file(input_file, output_file, input_header=None,
     # Update the features data frame.
     features_df = count_kmers(features_df=features_df)
 
-    # Normalize features matrix by dividing by length of sequence.
-    normalize(features_df, features_df.loc[:, "pairs"],
-              features_df.loc[:, "aaaaaa":"tttttt"])
+    # Get list of integer column numbers to normalize
+    kmer_cols_list = []
+    for kmer in kmers_list:
+        kmer_cols_list.append(features_df.columns.get_loc(kmer))
+    # Normalize the features data frame by the length of sequences of base
+    # pairs.
+    normalize(features_df, lengths_col=pairs_col, normalize_cols=kmer_cols_list)
 
     # Save to output file
     features_df.to_csv(output_file, header=output_header, sep=sep)
