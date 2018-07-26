@@ -103,6 +103,8 @@ Results from random forest on shuffled parts of human genome, hervs, enhancers, 
 Standard output from formatting of new length matched random sets created by accre job at 
 */dors/capra_lab/users/yand1/te_ml/bin/2018_07_23_random_sets/kmer_counter_batch.slurm*
 
+**2018_07_26_random_sets_pca**
+Scatter plots from principal component analysis on kmer counts in hervs, chromhmm enhancers, herv-enhancer overlap, and three random sets length each matched to one of those groups.
 
 
 # Individual Files

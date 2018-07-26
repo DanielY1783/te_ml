@@ -12,3 +12,4 @@ script:
 - pytest -v bin/2018_07_20_random_sets/test_data_splitter.py
 - pytest -v bin/2018_07_23_random_sets/test_kmer_counter_batch.py
 - pytest -v bin/2018_07_23_random_sets/test_reformat_df.py
+- pytest -v bin/2018_07_26_random_sets_pca/test_pca.py

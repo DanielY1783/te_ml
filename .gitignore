@@ -106,9 +106,12 @@ venv.bak/
 # Data folder too large
 data
 
-# Results file also too large
+# One results file also too large
 /results/2018_06_21_chromehmm_te
 
 # R files
 *.Rhistory
 *.RData
+
+# Temporary debug folder on local machine
+sample/

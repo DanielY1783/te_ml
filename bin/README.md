@@ -117,6 +117,9 @@ Add random sets length matched to herv-enhancer overlap and enhancers to the ori
 **2018_07_23_random_sets**
 Add random sets length matched to herv-enhancer overlap and enhancers to the original random set that was length matched to hervs. Files for counting 6-mers.
 
+**2018_07_26_random_sets_pca**
+Principal component analysis kmer counts in hervs, chromhmm enhancers, herv-enhancer overlap, and three random sets each length matched to one of those groups.
+
 
 # Travis Tested Modules
 The following modules contain components with Travis tests and can be safely reused.
@@ -125,9 +128,6 @@ Individual components within the modules are listed after the modules.
 **2018_07_11_pca_te_enhancers/shuffled_pca.py**
 1. generate_combinations: Generate all possible combinations from iterable
 2. generate_configurations: Generate all possible configurations from iterable
-
-**2018_07_17_tsne_kmers/pca.py**
-1. label_coordinates: Labels coordinates with labels corresponding to index
 
 **2018_07_17_tsne_kmers/sampling.py**
 1. stratified_sample: Stratified sampling of a pandas dataframe based on a column with labels
@@ -140,15 +140,15 @@ Individual components within the modules are listed after the modules.
 
 **2018_07_23_random_sets/kmer_counter_batch.py**
 1. generate_kmers: Generate all configurations of a certain length of k-mer.
+2. count_kmers: Count k-mers for a a column containing DNA sequences in a  pandas data frame and store results in columns of that data frame.
+
+**2018_07_26_random_sets_pca/pca.py**
+1. label_coordinates: Labels coordinates with labels corresponding to index
 
 
 # Reusable Modules
 These modules contain the following reusable components that lack Travis tests due to
 difficulty of writing unit tests (such as plots, machine learning models, etc)
-
-**2018_07_17_tsne_kmers/scatterplot_cords.py**
-1. create_ipca: Creates incremental pca and returns transformed coordinates
-2. scatterplot_pca: Creates scatter plot based on x-y coordinates in two columns.
 
 **2018_07_19_tf_chromhmm/ml_predict.py**
 1. all_steps: Wrapper for generating and saving cross validation and predictions from scikit learn model.
@@ -157,3 +157,14 @@ difficulty of writing unit tests (such as plots, machine learning models, etc)
 
 **2018_07_20_random_sets/data_splitter.py**
 1. split_files: Split a file containing a large data frame into smaller dataframes stored in separate files.
+
+**2018_07_23_random_sets/kmer_counter_batch.py**
+1. count_file: Wrapper for count_kmers on a data file containing a table.
+
+**2018_07_26_random_sets_pca/pca.py**
+1. create_ipca: Creates incremental pca and returns transformed coordinates
+2. scatterplot_pca: Creates scatter plot based on x-y coordinates in two columns.
+3. save_variances: Save variances accounted for by components of PCA to a file.
+
+**2018_07_26_random_sets_pca/pca_tasks_pipeline.py**
+1. pipeline: Extracts features matrix from data file and does PCA on features, stores transformed coordinates and variances, and creates scatter plots.
