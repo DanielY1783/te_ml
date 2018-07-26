@@ -135,8 +135,8 @@ def scatterplot_cords(df, file_name, labels_list, colors_list,
     plt.legend(fontsize=fontsize)
     plt.xlabel(x_label, fontsize=fontsize)
     plt.ylabel(y_label, fontsize=fontsize)
-    plt.savefig(file_name)
     plt.axis(axis)
+    plt.savefig(file_name)
     # Store the axis to return
     axes = plt.axis()
     plt.close()
