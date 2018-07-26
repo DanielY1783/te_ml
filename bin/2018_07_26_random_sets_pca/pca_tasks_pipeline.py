@@ -44,16 +44,15 @@ def plot_combinations(df, results_dir, labels_list, combinations_list,
                                                                component_y))
         if not os.path.exists(directory):
             os.makedirs(directory)
-    
+
         # Get labels for x and y axis
         x_label = "Component {} accounting for {}% of "
         x_label = "Component {} accounting for {}% of "
         "variation".format(component_x,
-            100 * ipca.explained_variance_ratio_[component_x]),
-        y_label = "Component {} accounting for {}% of variation".format(component_y,
-            100 * ipca.explained_variance_ratio_[component_y])
-    
-    
+                           100 * ipca.explained_variance_ratio_[component_x]),
+        y_label = "Component {} accounting for {}% of variation".format(
+            component_y, 100 * ipca.explained_variance_ratio_[component_y])
+
         # Plot the pca and get axis for further use
         saved_axis = pca.scatterplot_cords(df=df,
                                            file_name=directory +
@@ -63,7 +62,7 @@ def plot_combinations(df, results_dir, labels_list, combinations_list,
                                            title="All labels on components {} "
                                                  "and {"
                                                  "}".format(component_x,
-                                               component_y),
+                                                            component_y),
                                            component_x=component_x,
                                            component_y=component_y, alpha=0.5,
                                            # Label axis with how much
@@ -74,33 +73,32 @@ def plot_combinations(df, results_dir, labels_list, combinations_list,
                                                    "of "
                                                    "variation".format(
                                                component_x, 100 *
-                                               ipca.explained_variance_ratio_[
-                                                   component_x]),
+                                                            ipca.explained_variance_ratio_[
+                                                                component_x]),
                                            y_label="Component {} accounting "
                                                    "for {}% "
                                                    "of "
                                                    "variation".format(
                                                component_y, 100 *
-                                               ipca.explained_variance_ratio_[
-                                                   component_y]))
+                                                            ipca.explained_variance_ratio_[
+                                                                component_y]))
 
         # Plot just the random sets if there are more than 1
         randoms_list = [label for label in labels_list if "random" in label]
         random_num = len(randoms_list)
         labels_num = len(labels_list)
+        print(colors_list[labels_num - random_num: labels_num])
         if random_num > 1:
             pca.scatterplot_cords(df=df,
                                   file_name=directory + "random_sets.png",
                                   labels_list=randoms_list,
                                   colors_list=colors_list[
                                               labels_num - random_num:
-                                              random_num],
+                                              labels_num],
                                   title="Random sets on components {} and {"
-                                        "}".format(
-                                      component_x, component_y),
+                                        "}".format(component_x, component_y),
                                   component_x=component_x,
-                                  component_y=component_y,
-                                  alpha=0.5,
+                                  component_y=component_y, alpha=0.5,
                                   x_label="Component {} accounting for {}% of "
                                           "variation".format(component_x, 100 *
                                                              ipca.explained_variance_ratio_[
