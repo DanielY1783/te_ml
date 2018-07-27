@@ -168,3 +168,4 @@ difficulty of writing unit tests (such as plots, machine learning models, etc)
 
 **2018_07_26_random_sets_pca/pca_tasks_pipeline.py**
 1. pipeline: Extracts features matrix from data file and does PCA on features, stores transformed coordinates and variances, and creates scatter plots.
+2. plot_combinations: Plot different combinations of principal components.

@@ -31,6 +31,20 @@ import sys  # Command line arguments
 
 def plot_combinations(df, results_dir, labels_list, combinations_list,
                       colors_list, ipca):
+    """
+    Wrapper to plot different combinations of coordinates from a PCA labeled by
+    groups.
+
+    :param df: Data frame containing coordinates to plot.
+    :param results_dir: Directory to store plots to.
+    :param labels_list: List of labels for plot points.
+    :param combinations_list: Combinations of columns of data frame to plot
+    on x and y axis. 1 based, so 1 would correspond to column 0 in data frame.
+    :param colors_list: List of colors to label groups with. Length must be
+    same as labels_list.
+    :param ipca: Incremental PCA to get explained variances.
+    :return: None.
+    """
     # Plot different combinations of principal components
     for combination in combinations_list:
 
@@ -87,7 +101,6 @@ def plot_combinations(df, results_dir, labels_list, combinations_list,
         randoms_list = [label for label in labels_list if "random" in label]
         random_num = len(randoms_list)
         labels_num = len(labels_list)
-        print(colors_list[labels_num - random_num: labels_num])
         if random_num > 1:
             pca.scatterplot_cords(df=df,
                                   file_name=directory + "random_sets.png",
@@ -135,7 +148,22 @@ def plot_combinations(df, results_dir, labels_list, combinations_list,
             count += 1
 
 
-def pipeline(data_file, cords_file, results_dir, n_components):
+def pipeline(data_file, cords_file, results_dir, n_components=50,
+             n_components_plot=5):
+    """
+    Pipeline for generating PCA plots from data file containing features.
+
+    :param data_file: Data file containing features matrix. Must have one
+    column with labels named "label" and features in columns "aaaaaa" to
+    "tttttt" in header. Include directory and extension.
+    :param cords_file: File to store transformed coordinates to, including
+    directory and extension.
+    :param results_dir: Directory to store scatter plots to.
+    :param n_components: Number of components to reduce to (default = 50).
+    :param n_components_plot: Number of principal components to generate
+    combinations to plot (default = 5).
+    :return: None.
+    """
     # Load in data file
     print("Loading data file...")
     data_frame = pd.read_table(data_file)
@@ -163,11 +191,11 @@ def pipeline(data_file, cords_file, results_dir, n_components):
     pca.save_variances(pca=ipca, file_name=results_dir + "variances.txt")
 
     # Create combinations of principal components to plot
-    components = (1, 2, 3, 4, 5)
+    components = range(1, n_components_plot + 1)
     combinations_list = generate_combinations(components)
 
     # Plot all the combinations of components. Choose colors list with colors
-    #  in matplotlib.
+    # in matplotlib.
     plot_combinations(transformed_df, results_dir=results_dir,
                       labels_list=labels_list,
                       combinations_list=combinations_list,

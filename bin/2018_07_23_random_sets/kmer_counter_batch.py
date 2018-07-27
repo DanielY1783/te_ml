@@ -120,7 +120,7 @@ def count_file(input_file, output_file, input_header=None,
     normalize(features_df, lengths_col=pairs_col, normalize_cols=kmer_cols_list)
 
     # Save to output file
-    features_df.to_csv(output_file, header=output_header, sep=sep)
+    features_df.to_csv(output_file, header=output_header, sep=sep, index=False)
 
 if __name__ == '__main__':
     # Get name of data file to process from command line.
