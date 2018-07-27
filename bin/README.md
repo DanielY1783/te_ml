@@ -109,7 +109,7 @@ Principal component analysis to reduce features for tsne visualization on kmer c
 Same as previous day, but add script for stratified sampling of data to deal with memory error due to tsne consuming too much memory. Change tsne script to take in system argument for perplexity hyperparameter.
 
 **2018_07_18_rf_enhancers_hervs_shuffled**
-Random forest classifier of hervs, herv-enhancer intersect, enhancers, and shuffled parts of the human genome.
+Random forest classifier of hervs, herv-enhancer intersect, enhancers, and shuffled parts of the human genome length matched to hervs. Was not run successfully on full set of data due to memory timeout. Run on stratified sample of data.
 
 **2018_07_20_random_sets**
 Add random sets length matched to herv-enhancer overlap and enhancers to the original random set that was length matched to hervs. File for splitting up random sets into multiple files for easier processing.
