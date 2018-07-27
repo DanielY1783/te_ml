@@ -27,7 +27,6 @@ SVC with RBF kernel run on full set of hervs.
 
 
 
-
 ## Transposable Elements intersected with chromhmm enhancers using transcription factors as features. 
 Use all transposable elements instead of HERVs subset, and use chromhmm definition of enhancers. Predict transposable element overlap with enhancers based on transcription factors as features. 
 
@@ -61,25 +60,25 @@ Standard output from accre jobs doing kmer counts at */dors/capra_lab/users/yand
 Histogram of kmer distribution within hervs.
 
 **2018_07_02_kmers_pca_rf**
-Principal component analysis, random forest, gradient boosting with decision trees, and support vector classifier on herv overlap with chromhmm enhancers using transcription factors as features. Support vector classifier timed out, so no results from that.
+Principal component analysis, random forest, gradient boosting with decision trees, and support vector classifier on herv overlap with chromhmm enhancers using kmers as features. Support vector classifier timed out, so no results from that model.
 		
 **2018_07_03_pca_te_enhancers**
 Principal component analysis on kmers from tranposable elements that don't overlap an enhancer, enhancers, and overlap of enhancers and tranposable elements.
 
 **2018_07_05_subset_hervs**
-Run enhancer classifier on largest subset of hervs.
+Run random forest classifier on largest subset of hervs (mlt1k), with 1 representing overlap with chromhmm enhancer and 0 representing no overlap.
 
 **2018_07_06_genome_shuffle**
-Classify hervs vs random parts of the human genome as control
+accre output from converting control group of random parts of the human genome length matched to hervs.
 
 **2018_07_09_shuffle_ml**
-Continued from previous day (*2018_07_06_genome_shuffle*). Machine learning models on classifying hervs vs random parts of the human genome. hervs are positives (1), random parts are negatives (0).
+Random forest classifier for hervs vs random parts of the human genome. hervs are positives (1), random parts are negatives (0).
 
 **2018_07_09_pca_te_enhancers**
-Python version of principal component analysis on kmers from transposable elements only, intersection of tranposable elements and enhancers, and enhancers only.
+Scatter plots from python version of principal component analysis on kmers from transposable elements only, intersection of tranposable elements and enhancers, and enhancers only.
 
 **2018_07_10_pca_te_enhancers**
-Continued from previous day (*2018_07_09_pca_te_enhancers*), but add separate plots for different groups as well.
+Continued from previous day (*2018_07_09_pca_te_enhancers*), but add separate plots for each of the different groups.
 
 **2018_07_11_pca_te_enhancers**
 Standard output from reformatting features matrix of shuffled parts of the human genome.
@@ -88,7 +87,7 @@ Standard output from reformatting features matrix of shuffled parts of the human
 Standard output from reformatting features matrix of shuffled parts of the human genome.
 
 **2018_07_13_pca_te_enhancers**
-Continued from *2018_07_11_pca_te_enhancers*. Principal component analysis on shuffled parts of human genome, hervs, enhancers, and intersection of hervs and enhancers.
+Scatter plot from principal component analysis on shuffled parts of human genome, hervs, enhancers, and intersection of hervs and enhancers (added control of shuffled parts of human genome to previous plots in *2018_07_13_pca_te_enhancers*
 
 **2018_07_16_tsne_kmers**
 Saved pca models and explained variance ratios of principal components for dimensionality reduction for tsne.
@@ -97,16 +96,17 @@ Saved pca models and explained variance ratios of principal components for dimen
 TSNE scatterplots from top 50 principal components on shuffled parts of human genome, hervs, enhancers, and intersection of hervs and enhancers.
 
 **2018_07_18_rf_enhancers_hervs_shuffled**
-Results from random forest on shuffled parts of human genome, hervs, enhancers, and intersection herv-enhancer intersection.
+Results from random forest on shuffled parts of human genome, hervs, enhancers, and intersection herv-enhancer intersection. No results obtained yet because of memory timeout on accre.
 
 **2018_07_23_random_sets**
 Standard output from formatting of new length matched random sets created by accre job at 
 */dors/capra_lab/users/yand1/te_ml/bin/2018_07_23_random_sets/kmer_counter_batch.slurm*
 
 **2018_07_26_random_sets_pca**
-Scatter plots from principal component analysis on kmer counts in hervs, chromhmm enhancers, herv-enhancer overlap, and three random sets length each matched to one of those groups.
+Scatter plots from principal component analysis on kmer counts in hervs, chromhmm enhancers, herv-enhancer overlap, and three random sets length each matched to one of those groups. No results obtained because of memory timeout on accre.
 
 
 # Individual Files
 **summary.docx**
 Summary of the results from the different machine learning models.
+

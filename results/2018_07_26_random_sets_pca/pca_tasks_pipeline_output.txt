@@ -1,0 +1,3 @@
+slurmstepd: error: Job 28768464 exceeded memory limit (52428828 > 52428800), being killed
+slurmstepd: error: *** JOB 28768464 ON vmp467 CANCELLED AT 2018-07-26T22:46:53 ***
+slurmstepd: error: Exceeded step memory limit at some point.
