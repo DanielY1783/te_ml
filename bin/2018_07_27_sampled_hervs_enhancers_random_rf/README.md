@@ -8,6 +8,9 @@ Take stratified sample of rows from a labeled data frame.
 **test_sampling.py**
 Pytests for sampling.py
 
+# Modules/Dependencies
+**ml_predict.py** Wrapper for scikit learn machine learning models used in rf_faster.py
+
 ## Slurm files
 **sampling_2018_07_13_kmers_feature.slurm**
 accre scheduling file to take a stratified sample of 10,000 instances between hervs, chromhmm enhancers, herv-enhancer intersection, and random set length matched to hervs.
