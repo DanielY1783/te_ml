@@ -16,6 +16,8 @@ The data files are too large to store on Github and are on the Vanderbilt ACCRE 
 
 */dors/capra_lab/users/yand1/te_ml/data*
 
+Note that data files are zipped and need to be unzipped using gunzip
+
 ## Results
 The results folder was added on 2018-07-13 for easier synchronizing between local machine and Vanderbilt accre cluster. More detailed documentation is inside the results folder.
 
