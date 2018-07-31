@@ -118,7 +118,10 @@ Add random sets length matched to herv-enhancer overlap and enhancers to the ori
 Add random sets length matched to herv-enhancer overlap and enhancers to the original random set that was length matched to hervs. Files for counting 6-mers.
 
 **2018_07_26_random_sets_pca**
-Principal component analysis kmer counts in hervs, chromhmm enhancers, herv-enhancer overlap, and three random sets each length matched to one of those groups.
+Principal component analysis kmer counts in hervs, chromhmm enhancers, herv-enhancer overlap, and three random sets each length matched to one of those groups. Not run due to issues with lack of resources.
+
+**2018_07_27_sampled_hervs_enhancers_random_rf**
+Random forest classifier on stratified sample of hervs, chromhmm enhancers, herv-enhancer overlap, and random set length matched to hervs.
 
 
 # Travis Tested Modules

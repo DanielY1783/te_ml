@@ -13,5 +13,3 @@
 
 **rf_faster.slurm** accre scheduler file to run *rf_faster.py* on full set of data. Did not run successfully due to memory timeout on accre.
 
-**rf_faster_sampled.slurm** accre scheduler file to run *rf_faster.py* on stratified sampling of data.
-
