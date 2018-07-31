@@ -1,0 +1,8 @@
+                         precision    recall  f1-score   support
+
+          enhancer_only       0.69      0.82      0.75      9634
+herv_enhancer_intersect       0.33      0.11      0.17      3367
+              herv_only       0.44      0.25      0.32      4349
+        shuffled_genome       0.51      0.67      0.58      7650
+
+            avg / total       0.54      0.58      0.55     25000
