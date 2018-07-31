@@ -5,8 +5,8 @@
 #SBATCH --ntasks=1
 #SBATCH --mem=100G
 #SBATCH --time=1:00:00
-#SBATCH --output=/dors/capra_lab/users/yand1/te_ml/data/2018_07_13_pca_te_enhancers/sampling_output.txt
+#SBATCH --output=/dors/capra_lab/users/yand1/te_ml/data/2018_07_27_sampled_hervs_enhancers_random_rf/sampling_output.txt
 
 module load Anaconda3
-python sampling.py /dors/capra_lab/users/yand1/te_ml/data/2018_07_13_pca_te_enhancers/hervs_enhancers_shuffled_features_matrix.tsv /dors/capra_lab/users/yand1/te_ml/data/2018_07_13_pca_te_enhancers/sampled_hervs_enhancers_shuffled_features_matrix.tsv 10000
+python sampling.py /dors/capra_lab/users/yand1/te_ml/data/2018_07_13_pca_te_enhancers/hervs_enhancers_shuffled_features_matrix.tsv /dors/capra_lab/users/yand1/te_ml/data/2018_07_27_sampled_hervs_enhancers_random_rf/sampled_hervs_enhancers_shuffled_features_matrix.tsv 10000
 
