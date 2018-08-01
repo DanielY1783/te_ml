@@ -1,0 +1,4 @@
+Loading required package: ggplot2
+Welcome! Related Books: `Practical Guide To Cluster Analysis in R` at https://goo.gl/13EFCZ
+null device 
+          1 

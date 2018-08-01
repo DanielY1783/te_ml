@@ -1,0 +1,74 @@
+# Author: Daniel Yan
+#
+# Email: daniel.yan@vanderbilt.edu
+#
+# Date: 2018-07-18
+#
+# Description: Grid search on random forest classifier of enhancers overlap
+# with transposable elements based on transcription factors as features. 0
+# represents no overlap; 1 represents overlap in labels.
+#
+# Command Line Arguments:
+# 1. Name of data file with features, including directory and extension.
+# 2. Name of data file with labels to predict
+# 3. Directory to store output files to. End with backslash.
+#
+# Preconditions:
+# 1. Features data file must include header names in first row and no indices
+# 2. Labels data file must not include a header.
+#
+# Postconditions:
+# Files containing predictions from the best random forest classifier after a
+# grid search are written to the directory passed as third parameter.
+
+
+# Libraries
+import ml_predict  # Wrappers for scikit learn machine learning models
+import numpy as np # For ravel
+import pandas as pd  # Data manipulation
+from sklearn.ensemble import RandomForestClassifier  # Random forest
+from sklearn.model_selection import GridSearchCV  # Grid search
+from sklearn.model_selection import train_test_split  # For data splitting
+import sys  # Command line arguments
+
+# Constants
+CV = 10  # Cross validation folds
+
+if __name__ == '__main__':
+    # Read in name of features file
+    features_file = sys.argv[1]
+    # Read in name of data file with things to predict.
+    predictors_file = sys.argv[2]
+    # Read in name of directory to write results to
+    output_directory = sys.argv[3]
+
+    # Read in features file with headers in row 0
+    print("Reading in data files")
+    x_df = pd.read_table(features_file, header=0)
+    # Get labels to predict
+    y_df = pd.read_table(predictors_file, header=None)
+    y_df = y_df.values.ravel()
+
+    # Train test split
+    x_train, x_test, y_train, y_test = train_test_split(x_df, y_df)
+
+    # Grid search on training set for random forest model.
+    print("Starting grid search")
+    parameters = {"max_features": ["sqrt", None],
+                  "max_depth": [None, 5, 50, 100]}
+    model = GridSearchCV(RandomForestClassifier(n_estimators=1000, n_jobs=-1),
+                         param_grid=parameters, n_jobs=-1, scoring="f1_macro",
+                         cv=CV)
+    model.fit(x_train, y_train)
+
+    # Print out the best model
+    with open(output_directory + "best_model.txt", mode="w+") as file:
+        file.write("Best params: " + str(model.best_params_) + '\n')
+        file.write("Best score: " + str(model.best_score_) + '\n')
+
+    # Predict results using best model
+    print("Generating predictions")
+    ml_predict.predict_model(x_train=x_train, x_test=x_test, y_train=y_train,
+                             y_test=y_test, model=model,
+                             results_directory=output_directory,
+                             model_name="rf", cv = CV)

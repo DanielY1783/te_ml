@@ -1,0 +1,10 @@
+Plotting component 1 and 2
+Plotting component 1 and 3
+Plotting component 1 and 4
+Plotting component 1 and 5
+Plotting component 2 and 3
+Plotting component 2 and 4
+Plotting component 2 and 5
+Plotting component 3 and 4
+Plotting component 3 and 5
+Plotting component 4 and 5

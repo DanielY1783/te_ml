@@ -1,0 +1,5 @@
+Reading in data file
+Starting grid search
+slurmstepd: error: Job 28646629 exceeded memory limit (1106390976 > 157286400), being killed
+slurmstepd: error: Exceeded job memory limit
+slurmstepd: error: *** JOB 28646629 ON vmp422 CANCELLED AT 2018-07-18T17:43:05 ***

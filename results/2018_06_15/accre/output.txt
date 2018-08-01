@@ -1,0 +1,2 @@
+/opt/easybuild/software/Core/Anaconda3/4.4.0/lib/python3.6/site-packages/sklearn/metrics/classification.py:1113: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)

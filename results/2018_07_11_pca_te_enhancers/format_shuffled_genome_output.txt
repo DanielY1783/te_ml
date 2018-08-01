@@ -1,0 +1,2 @@
+slurmstepd: error: *** JOB 28488054 ON vmp1380 CANCELLED AT 2018-07-11T17:13:20 ***
+slurmstepd: error: *** JOB 28491269 ON vmp1288 CANCELLED AT 2018-07-13T09:18:43 ***

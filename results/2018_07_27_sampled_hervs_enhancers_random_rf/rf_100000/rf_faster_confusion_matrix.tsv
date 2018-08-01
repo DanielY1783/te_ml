@@ -1,0 +1,5 @@
+	predicted_enhancer_only	predicted_herv_enhancer_intersect	predicted_herv_only	predicted_shuffled_genome
+actual_enhancer_only	7915	104	211	1404
+actual_herv_enhancer_intersect	751	383	660	1573
+actual_herv_only	1012	390	1079	1868
+actual_shuffled_genome	1732	293	524	5101

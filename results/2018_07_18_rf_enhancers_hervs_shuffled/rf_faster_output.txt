@@ -1,0 +1,2 @@
+/usr/spool/slurm/job28780303/slurm_script: line 11: 27090 Killed                  python rf_faster.py /dors/capra_lab/users/yand1/te_ml/data/2018_07_13_pca_te_enhancers/hervs_enhancers_shuffled_features_matrix.tsv /dors/capra_lab/users/yand1/te_ml/results/2018_07_18_rf_enhancers_hervs_shuffled/ label
+slurmstepd: error: Exceeded step memory limit at some point.

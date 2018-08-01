@@ -1,0 +1,2 @@
+Cross validation scores, metrics, and confusion matrix for random forest model that predicts HERVs vs generic parts of the human genome based on 6-mer counts generated from
+/dors/capra_lab/users/yand1/te_ml/bin/2018_07_09_shuffle_ml/shuffle_rf.py
